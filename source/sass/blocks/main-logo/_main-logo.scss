@@ -1,0 +1,62 @@
+.main-logo {
+  @include centerer(null, null, both);
+  padding-bottom: 1px;
+  padding-right: 2px;
+  display: block;
+
+  &::after {
+    @include pseudo-ie11-fix();
+  }
+
+  @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)) {
+    position: static;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    padding-top: 0;
+    padding-right: 2px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    @include centerer(null, null, both);
+  }
+}
+
+.main-logo:focus,
+.main-logo:hover {
+  .main-logo__svg {
+    @include opacity(0.6);
+  }
+}
+
+.main-logo:active {
+  .main-logo__svg {
+    @include opacity(0.3);
+  }
+}
+
+.main-logo__svg {
+  width: 85.59px;
+  max-width: 85.59px;
+  height: 35.03px;
+  display: block;
+  color: color($base-c, black);
+  fill: color($base-c, black);
+
+  g[data-name="Layer 1"] {
+    color: #ffffff;
+    fill: #ffffff;
+  }
+
+  @media (min-width: breakpoint(tablet)) {
+    width: 112.39px;
+    max-width: 112.39px;
+    height: 46.09px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    width: 149.05px;
+    max-width: 149.05px;
+    height: 73.71px;
+  }
+}
