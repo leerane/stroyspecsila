@@ -31,5 +31,5 @@ THE SOFTWARE.
 ```
 [mit-image]: https://img.shields.io/badge/License-MIT-yellow.svg
 [mit-url]: https://opensource.org/licenses/MIT
-[dependency-image]: https://david-dm.org/leerane/levels-starter-kit/dev-status.svg?style=flat-square
-[dependency-url]: https://david-dm.org/leerane/levels-starter-kit?type=dev
+[dependency-image]: https://david-dm.org/leerane/levels-starter/dev-status.svg?style=flat-square
+[dependency-url]: https://david-dm.org/leerane/levels-starter?type=dev
