@@ -1,5 +1,5 @@
 # Levels
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) ![devDependencies](https://david-dm.org/leerane/levels-starter-kit.svg)
+[![License: MIT][mit-image]][mit-url] ![devDependencies](https://david-dm.org/leerane/levels-starter-kit.svg)
 
 Levels is a Gulp-based starter kit that gives your an opportunity to start your own front-end project.
 Levels consist of many useful utilities, such as SCSS (SASS) preprocessor,  
@@ -29,3 +29,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ```
+[mit-image]: https://img.shields.io/badge/License-MIT-yellow.svg
+[mit-url]: https://opensource.org/licenses/MIT
+[dependency-image]: https://david-dm.org/leerane/levels-starter-kit/dev-status.svg?style=flat-square
+[dependency-url]: https://david-dm.org/leerane/levels-starter-kit?type=dev
