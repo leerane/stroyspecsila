@@ -1,5 +1,5 @@
 # Levels
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) ![devDependencies](https://david-dm.org/leerane/levels-starter-kit.svg)
 
 Levels is a Gulp-based starter kit that gives your an opportunity to start your own front-end project.
 Levels consist of many useful utilities, such as SCSS (SASS) preprocessor,  
