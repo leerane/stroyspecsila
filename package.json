@@ -1,8 +1,17 @@
 {
-  "name": "mishka",
-  "version": "14.0.0",
-  "private": true,
-  "description": "Личный проект «Мишка» от HTML Academy",
+  "name": "levels-starter-kit",
+  "version": "1.0.0",
+  "description": "Gulp-based starter kit",
+  "author": "Nikolay Moryakin <leeranez@gmail.com> (https://github/leerane)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leerane/levels-starter"
+  },
+  "bugs": {
+    "url": "https://github.com/leerane/levels-starter/issues"
+  },
+  "homepage": "https://github.com/leerane/levels-starter#readme",
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "1.x",
     "autoprefixer": "8.4.1",
@@ -52,7 +61,8 @@
     "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss \"!**/normalize.scss\"",
     "test": "npm run editorconfig && npm run stylelint",
     "build": "gulp build",
-    "start": "gulp build:watch"
+    "start": "gulp build:watch",
+    "deploy": "npm run build && gh-pages -d build"
   },
   "browserslist": [
     "last 2 versions",
