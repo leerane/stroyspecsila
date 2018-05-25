@@ -10,7 +10,7 @@ This starter kit is released under the [MIT License][mit-license].
 
 Copyright (c) 2018 Nikolay Moryakin.
 
-[mit-license]: blob/master/LICENSE
+[mit-license]: /LICENSE
 [mit-image]: https://img.shields.io/badge/License-MIT-yellow.svg
 [mit-url]: https://opensource.org/licenses/MIT
 [dependency-image]: https://david-dm.org/leerane/levels-starter/dev-status.svg?style=flat-square
