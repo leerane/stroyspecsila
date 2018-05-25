@@ -6,9 +6,9 @@ Levels consist of many useful utilities, such as SCSS (SASS) preprocessor,
 
 
 # License 
-This starter kit is released under the [MIT License][mit-license].
+This starter kit is released under the [MIT License][mit-license]
 
-Copyright (c) 2018 Nikolay Moryakin.
+Copyright (c) 2018 Nikolay Moryakin
 
 [mit-license]: /LICENSE
 [mit-image]: https://img.shields.io/badge/License-MIT-yellow.svg
