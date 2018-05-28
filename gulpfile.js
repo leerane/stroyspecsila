@@ -120,7 +120,7 @@ gulp.task("html", () => {
 
 // SCSS to CSS
 gulp.task("sass-styles", () => {
-  return gulp.src(path.sourcePath + path.scssPath + path.scssPattern, { since: gulp.lastRun("sass-styles")})
+  return gulp.src(path.sourcePath + path.scssPath + "/" + name.scssFile, { since: gulp.lastRun("sass-styles")})
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: "expanded"}).on("error", sass.logError))
