@@ -1,12 +1,14 @@
 <p align="center">
-  <img src="http://kingslounge.ru/logo--sharp.svg">
+  <img src="http://kingslounge.ru/img/logo.svg" width="148.03" height="198.34">
 </p>
 
 # King's Lounge
 [![License: MIT][mit-image]][mit-url] [![Dependency status][dependency-image]][dependency-url]
 
+This is a repository of hookah lounge's website.
+
 # License 
-This project is released under the [MIT License][mit-license]
+This project is released under the [MIT License][mit-license].
 
 Copyright (c) 2018 Nikolay Moryakin
 
