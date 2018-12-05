@@ -1,12 +1,12 @@
-# Levels
+<p align="center">
+  <img src="http://kingslounge.ru/logo--sharp.svg">
+</p>
+
+# King's Lounge
 [![License: MIT][mit-image]][mit-url] [![Dependency status][dependency-image]][dependency-url]
 
-Levels is a Gulp-based starter kit that gives your an opportunity to start your own front-end project.
-Levels consist of many useful utilities, such as SCSS (SASS) preprocessor,  
-
-
 # License 
-This starter kit is released under the [MIT License][mit-license]
+This project is released under the [MIT License][mit-license]
 
 Copyright (c) 2018 Nikolay Moryakin
 
