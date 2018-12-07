@@ -1,5 +1,22 @@
 // --- MIXINS ---
 
+// Fluid font
+
+@mixin fluid-type($min-font-size: font-size(root), $max-font-size: font-size(other-l),
+  $lower-range: breakpoint(mobile-top), $upper-range: breakpoint(desktop)) {
+
+  font-size: calc(#{$min-font-size} + #{(($max-font-size / ($max-font-size * 0 + 1)) -
+    ($min-font-size / ($min-font-size * 0 + 1)))} * ( (100vw -
+    #{$lower-range}) / #{(($upper-range / ($upper-range * 0 + 1)) - ($lower-range / ($lower-range * 0 + 1)))}));
+
+  @media (max-width: $lower-range) {
+    font-size: $min-font-size;
+  }
+  @media (min-width: $upper-range) {
+    font-size: $max-font-size;
+  }
+}
+
 // Fonts
 
 @mixin font-face($font-family, $font-path: "../fonts/", $font-file-name: opensans, $font-style: normal, $font-weight: normal, $font-display: swap, $font-svg-id: null, $text-rendering: null, $font-formats: (eot: embedded-opentype, woff2: woff2, woff: woff, ttf: truetype, otf: opentype, svg: svg)) {

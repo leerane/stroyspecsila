@@ -3,16 +3,18 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Gulp-based starter kit that allows you to start your own front-end projects easily.">
-    <meta name="keywords" content="gulp, starter, kit, scss, sass, boilerplate, html, css, front-end">
+    <meta name="description" content="Кальянная King's Lounge">
+    <meta name="keywords" content="кальянная, кальян, hookah, king, lounge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Levels - a Gulp-based starter kit</title>
+    <title>Кальянная King's Lounge</title>
 
     <!--- Preloading fonts and other stuff -->
-    <link rel="preload" href="fonts/opensans.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/opensansbold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/montserratregular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/montserratmedium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/montserratbold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/montserratblack.woff2" as="font" type="font/woff2" crossorigin>
 
-    <link rel="stylesheet" href="css/utility/normalize.min.css">
+    <!-- Styles -->
     <link rel="stylesheet" href="css/styles.min.css">
 
     <!-- Picturefill -->
@@ -21,74 +23,102 @@
     </script>
     <script src="js/libs/picturefill/picturefill.min.js" async></script>
   </head>
+
+  <!-- Главная часть страницы -->
   <body class="main-page">
+
+    <!-- Шапка сайта -->
     <header class="main-header">
-      <nav class="main-navigation">
-        <div class="main-navigation__top">
-          <a class="main-logo main-page__main-logo">
-            <picture>
-              <source media="(min-width: 1150px)" srcset="img/svg/site-logo--main.svg">
-              <source media="(min-width: 768px)" srcset="img/svg/site-logo--tablet.svg">
-              <img src="img/svg/site-logo--mobile.svg" alt="Main logo" class="main-logo__svg">
-            </picture>
-          </a>
-          <button class="hamburger-button main-navigation__hamburger-button js-hamburger-button visually-hidden" type="button" aria-label="Hamburger button"></button>
-        </div>
-        <div class="main-navigation__bottom">
-          <ul class="main-navigation__list main-navigation__list--second">
-            <li class="main-navigation__item">
-              <a href="#" class="link main-navigation__link">Home</a>
-            </li>
-            <li class="main-navigation__item">
-              <a href="#" class="link main-navigation__link">Features</a>
-            </li>
-            <li class="main-navigation__item">
-              <a href="#" class="link main-navigation__link">Our goal</a>
-            </li>
-            <li class="main-navigation__item">
-              <a href="#" class="link main-navigation__link">Contact us</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <div class="main-header__inner">
+
+        <!-- Главный логотип сайта -->
+        <a class="main-logo main-page__main-logo" aria-label="Логотип King's Lounge">
+          <picture>
+            <source media="(min-width: 768px)" srcset="img/svg/logo--gradient.svg">
+            <img src="img/svg/logo--mobile.svg" alt="Логотип King's Lounge" class="main-logo__svg">
+          </picture>
+        </a>
+        <a href="tel:+79035502500" class="main-header__call">
+          <svg aria-label="Footer logo" width="30.56" height="30.49" class="main-header__call-svg">
+            <use xlink:href="img/svg/sprite.svg#call-icon"/>
+          </svg>
+          <span class="visually-hidden">+7 (903) 550-25-00</span>
+        </a>
+        <button class="hamburger-button js-hamburger-button" type="button" aria-label="Hamburger button">
+          <span class="hamburger-button__icon"></span>
+        </button>
+        <!-- Главная навигация сайта -->
+       <!-- <nav class="main-navigation">
+          <div class="main-navigation__inner">
+            <ul class="main-navigation__list">
+              <li class="main-navigation__item">
+                <a href="#" class="link main-navigation__link">Главная</a>
+              </li>
+              <li class="main-navigation__item">
+                <a href="#" class="link main-navigation__link">Меню</a>
+              </li>
+              <li class="main-navigation__item">
+                <a href="#" class="link main-navigation__link">Контакты</a>
+              </li>
+              <li class="main-navigation__item">
+                <a href="#" class="link main-navigation__link">Галерея</a>
+              </li>
+            </ul>
+            <a href="tel:+7(903)550-25-00" class="main-navigation__phone">+7 (903) 550-25-00</a>
+          </div>
+        </nav> -->
+      </div>
     </header>
+
+    <!-- Контент сайта -->
     <main class="main-content">
       <h1 class="visually-hidden">Main page</h1>
+      <section class="promo-things">
+        <div class="promo-things__inner">
+          <h2 class="main-title promo-things__title">Кальянная
+            King's Lounge!</h2>
+          <a href="#contact" class="promo-things__address"></a>
+          <div class="promo-things__order-buttons">
+            <a href="" class="promo-things__button"></a>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <!-- Подвал сайта -->
     <footer class="main-footer">
       <div class="main-footer__inner">
-        <a class="main-footer__logo main-page__footer-logo">
+       <a href="" class="main-footer__logo main-page__footer-logo">
           <svg aria-label="Footer logo" width="101.61" height="34.06" class="main-footer__logo-svg">
-            <use xlink:href="img/svg/sprite.svg#footer-logo"/>
+            <use xlink:href="img/svg/sprite.svg#logo--full"/>
           </svg>
         </a>
         <ul class="social-list">
           <li class="social-list__item">
             <a href="#" class="social-link"><span class="visually-hidden">Instagram</span>
-              <svg aria-label="Instagram" width="21.77" height="21.33" class="social-link__svg">
-                <use xlink:href="img/svg/sprite.svg#social-instagram"/>
+              <svg aria-label="Instagram" width="28.05" height="28.05" class="social-link__svg">
+                <use xlink:href="img/svg/sprite.svg#instagram-icon"/>
               </svg>
             </a>
           </li>
           <li class="social-list__item">
-            <a href="#" class="social-link"><span class="visually-hidden">Facebook</span>
-              <svg aria-label="Facebook" width="14.96" height="27.72" class="social-link__svg">
-                <use xlink:href="img/svg/sprite.svg#social-facebook"/>
+            <a href="#" class="social-link"><span class="visually-hidden">VK</span>
+              <svg aria-label="VK" width="28.05" height="28.05" class="social-link__svg">
+                <use xlink:href="img/svg/sprite.svg#vk-icon"/>
               </svg>
             </a>
           </li>
           <li class="social-list__item">
             <a href="#" class="social-link"><span class="visually-hidden">Twitter</span>
-              <svg aria-label="Twitter" width="23.49" height="20.17" class="social-link__svg">
-                <use xlink:href="img/svg/sprite.svg#social-twitter"/>
+              <svg aria-label="Facebook" width="28.05" height="28.05" class="social-link__svg">
+                <use xlink:href="img/svg/sprite.svg#facebook-icon"/>
               </svg>
             </a>
           </li>
         </ul>
-        <p class="footer-copyright">
-        </p>
       </div>
     </footer>
+
     <!-- SVG for Everybody -->
     <script src="js/libs/svg4everybody/svg4everybody.min.js"></script>
     <script>svg4everybody();</script>

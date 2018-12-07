@@ -1,5 +1,14 @@
 // --- FUNCTIONS ---
 
+// Units
+
+@function strip-unit($number) {
+  @if (type-of($number) == 'number' and not unitless($number)) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+
 // Color
 
 @function color($color-map, $color-value) {
@@ -34,10 +43,29 @@
   }
 }
 
+@function rem($values...) {
+  $list: null;
+  @each $item in $values {
+    @if (type-of $item == number) {
+      $result: round($item / strip-unit(font-size(root)));
+      $list: append($list, #{$result}rem);
+    }
+  }
+  @return $list;
+}
+
 // Grids
 
 @function breakpoint($bp-size) {
   @if map-has-key($breakpoints, $bp-size) {
     @return map-get($breakpoints, $bp-size);
+  }
+}
+
+// Z-index
+
+@function z-index($value) {
+  @if map-has-key($z-index, $value) {
+    @return map-get($z-index, $value);
   }
 }
