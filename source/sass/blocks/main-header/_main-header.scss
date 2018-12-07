@@ -1,32 +1,32 @@
 .main-header {
-  background-color: color($base-c, white);
+  background-color: color($base-c, black);
   margin: 0;
   padding: 0;
   position: relative;
-  box-shadow:
-    inset 0 1px 0 0 color($grey-c, darker),
-    inset 0 -1px 0 0 color($grey-c, darker);
+}
 
-  @media (min-width: breakpoint(tablet)) {
-    min-height: 89px;
-    overflow: visible;
-  }
+.main-header__inner {
+  margin: 0;
+  padding: rem(30, 30);
+  display: flex;
+  justify-content: space-between;
+  min-height: rem(80);
+}
 
-  @media (min-width: breakpoint(desktop)) {
-    box-shadow: none;
+.main-header__call {
+  margin: 0;
+  padding: 0;
+}
+
+.main-logo:focus,
+.main-logo:hover {
+  .main-header__call-svg {
+    @include opacity(0.6);
   }
 }
 
-.main-header::after {
-  @media (min-width: breakpoint(desktop)) {
-    content: " ";
-    position: absolute;
 
-    @include centerer(1150px, null, horizontal);
-    bottom: 0;
-    width: 1150px;
-    max-width: 1150px;
-    height: 1px;
-    background-color: color($grey-c, darker);
-  }
+.main-header__call-svg {
+  fill: color($main-c, primary);
+  color: color($main-c, primary);
 }

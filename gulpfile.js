@@ -101,40 +101,25 @@ gulp.task("html", () => {
   return gulp.src(path.sourcePath + path.htmlPattern, { since: gulp.lastRun("html") })
     .pipe(plumber())
     .pipe(gulp.dest(path.buildPath))
-    .pipe(reload({ stream: true }));
+    .pipe(browserSync.stream());
 });
-
-// gulp.task("sass-concat", () => {
-//   return gulp.src([
-//     path.sourcePath + path.scssPath + path.utilityPath + path._configFilePattern,
-//     path.sourcePath + path.scssPath + path.blocksPath + path._scssPattern,
-//     path.sourcePath + path.scssPath + path.utilityPath + path._lastAttrPattern
-//     ])
-//     .pipe(plumber())
-//     .pipe(sourcemaps.init())
-//     .pipe(concat(name.scssFile))
-//     .pipe(sourcemaps.write("."))
-//     .pipe(gulp.dest(path.sourcePath + path.scssPath))
-//     .pipe(reload({ stream: true }));
-// });
 
 // SCSS to CSS
 gulp.task("sass-styles", () => {
-  return gulp.src(path.sourcePath + path.scssPath + "/" + name.scssFile, { since: gulp.lastRun("sass-styles")})
+  return gulp.src(path.sourcePath + path.scssPath + '/' + name.scssFile)
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: "expanded"}).on("error", sass.logError))
     .pipe(postcss([autoprefixer()]))
-    .pipe(csscomb("csscomb.json"))
     .pipe(gulp.dest(path.buildPath + path.cssPath))
     .pipe(postcss([cssnano({ minifyFontWeight: false })]))
     .pipe(rename({
       suffix: ".min",
       extname: ".css"
     }))
-    .pipe(sourcemaps.write("."))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(path.buildPath + path.cssPath))
-    .pipe(reload({ stream: true }));
+    .pipe(browserSync.stream());
 });
 
 // gulp.task("sass-glob", () => {
@@ -145,7 +130,7 @@ gulp.task("sass-styles", () => {
 //     .pipe(reload({ stream: true }));
 // });
 
-gulp.task("css", gulp.series("sass-styles"));
+gulp.task("styles", gulp.series("sass-styles"));
 
 // JavaScript
 gulp.task("js", () => {
@@ -220,9 +205,7 @@ gulp.task("sprite", () => {
     .pipe(cheerio({
       run: function ($) {
         var elements = [
-          "#mishka-logo--tablet",
-          "#mishka-logo--main",
-          "#play-button-icon"
+
         ];
         var excludeElements = {
           g: elements.map((e) => { return e + " g"}),
@@ -297,13 +280,13 @@ gulp.task("build:clean", () => {
 });
 
 // Build
-gulp.task("build", gulp.series("copy", "sprite", "compress", "html", "css", "libs-js", "js"));
+gulp.task("build", gulp.series("copy", "sprite", "compress", "html", "styles", "libs-js", "js"));
 
 // Watch changes
 gulp.task("watch", () => {
-  gulp.watch(path.sourcePath + path.scssPath + path._scssPattern, gulp.series("css"));
-  gulp.watch(path.sourcePath + path.jsPath + path.jsModulesPath + path.jsPattern, gulp.series("js"));
-  gulp.watch(path.sourcePath + path.htmlPattern, gulp.series("html"));
+  gulp.watch(path.sourcePath + path.scssPath + path.scssPattern, gulp.series("styles")).on('change', reload);
+  gulp.watch(path.sourcePath + path.jsPath + path.jsModulesPath + path.jsPattern, gulp.series("js")).on('change', reload);
+  gulp.watch(path.sourcePath + path.htmlPattern, gulp.series("html")).on('change', reload);
 });
 
 // Build and watch
