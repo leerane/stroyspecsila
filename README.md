@@ -1,5 +1,7 @@
 <p align="center">
-  <img src="http://kingslounge.ru/img/logo.svg" width="148.03" height="198.34">
+  <a href="http://kingslounge.ru">
+    <img src="http://kingslounge.ru/img/logo.svg" width="148.03" height="198.34">
+  </a>
 </p>
 
 # King's Lounge
