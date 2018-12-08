@@ -1,0 +1,13 @@
+.promo-things {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background-image: url("../img/svg/note-pattern.svg");
+  background-repeat: repeat;
+  background-size: 100px;
+}
+
+.promo-things__title {
+  margin: 0 auto;
+  padding: rem(70, 30);
+}

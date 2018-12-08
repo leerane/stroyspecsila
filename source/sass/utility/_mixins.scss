@@ -1,5 +1,22 @@
 // --- MIXINS ---
 
+// Fluid font
+
+@mixin fluid-type($min-font-size: font-size(root), $max-font-size: font-size(other-l),
+  $lower-range: breakpoint(mobile-top), $upper-range: breakpoint(desktop)) {
+
+  font-size: calc(#{$min-font-size} + #{(($max-font-size / ($max-font-size * 0 + 1)) -
+    ($min-font-size / ($min-font-size * 0 + 1)))} * ( (100vw -
+    #{$lower-range}) / #{(($upper-range / ($upper-range * 0 + 1)) - ($lower-range / ($lower-range * 0 + 1)))}));
+
+  @media (max-width: $lower-range) {
+    font-size: $min-font-size;
+  }
+  @media (min-width: $upper-range) {
+    font-size: $max-font-size;
+  }
+}
+
 // Fonts
 
 @mixin font-face($font-family, $font-path: "../fonts/", $font-file-name: opensans, $font-style: normal, $font-weight: normal, $font-display: swap, $font-svg-id: null, $text-rendering: null, $font-formats: (eot: embedded-opentype, woff2: woff2, woff: woff, ttf: truetype, otf: opentype, svg: svg)) {
@@ -18,26 +35,27 @@
 
   @at-root {
     @font-face {
+      font-weight: $font-weight;
       font-family: "#{$font-family}";
+      font-style: $font-style;
+      src: $font-src;
+      font-display: $font-display;
+      text-rendering: $text-rendering;
       @if (map-has-key($font-formats, eot)) {
         src: url("#{$font-path}#{$font-file-name}.eot");
       }
-      src: $font-src;
-      font-style: $font-style;
-      font-weight: $font-weight;
-      font-display: $font-display;
-      text-rendering: $text-rendering;
     }
   }
+  $font-src: ();
 }
 
 @mixin font-par($family: font-family(opensans), $weight: font-weight(regular), $size: font-size(base-m), $style: normal, $color-f: color($main-c, secondary), $line-height: font-lh(base)) {
-  font-family: $family;
-  font-size: $size;
   font-weight: $weight;
-  font-style: $style;
+  font-size: $size;
   line-height: $line-height;
+  font-family: $family;
   color: $color-f;
+  font-style: $style;
 }
 
 // Border
@@ -83,13 +101,13 @@
 // Other
 
 @mixin pseudo-ie11-fix() {
-  position: absolute;
-  display: block;
   content: "";
+  position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  display: block;
 }
 
 @mixin visually-hidden() {
@@ -110,20 +128,20 @@
 }
 
 @mixin modal-overlay() {
+  position: fixed;
+  top: 0;
+  right: 0;
   bottom: 0;
   left: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
   background-color: color($base-c, white);
 
   @include opacity();
 }
 
 @mixin clear-list() {
-  list-style: none;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 @mixin centerer($width: null, $height: null, $direction: both) {
@@ -165,24 +183,24 @@
 
 @mixin flex-centerer() {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 // UI
 
 @mixin placeholder() {
-  $prefix-list:
-    "::-webkit-input-placeholder",
-    ":-moz-placeholder",
-    "::-moz-placeholder",
-    ":-ms-input-placeholder";
 
   @each $prefix in $prefix-list {
     &#{$prefix} {
       @content;
     }
   }
+  $prefix-list:
+    "::-webkit-input-placeholder",
+    ":-moz-placeholder",
+    "::-moz-placeholder",
+    ":-ms-input-placeholder";
 }
 
 @mixin card($background-color: color($base-c, white)) {
