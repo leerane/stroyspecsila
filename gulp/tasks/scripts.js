@@ -5,6 +5,8 @@ import concat from 'gulp-concat';
 import uglify from 'gulp-uglify';
 import rename from 'gulp-rename';
 import babel from 'gulp-babel';
+import webpack from 'webpack';
+import webpackStream from 'webpack-stream';
 import {PathName, FileName} from './utils';
 import browserSync from 'browser-sync';
 

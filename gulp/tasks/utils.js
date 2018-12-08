@@ -81,7 +81,7 @@ const PathName = {
   FONTS: '/fonts',
   FONTS_PATTERN: '/**/*.{woff,woff2}',
   _LAST_ATTR_FILE: '/' + FileName.LAST_ATTR,
-  _CONFIG_FILE: '/' + FileName.CONFIG,
+  _CONFIG_FILE: '/' + FileName.CONFIG
 };
 
 export {FileName, PathName};

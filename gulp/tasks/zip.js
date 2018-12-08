@@ -1,6 +1,5 @@
 import gulp from 'gulp';
 import gulpZip from 'gulp-zip';
-import gulpGzip from 'gulp-gzip';
 import {build} from './build';
 import {PathName} from './utils';
 
@@ -12,21 +11,11 @@ import {PathName} from './utils';
  * Функция zip
  */
 const toZip = () => {
-  return gulp.src(PathName.BUILD)
+  return gulp.src(PathName.BUILD + '/**', {base: PathName.BUILD})
     .pipe(gulpZip('build.zip'))
     .pipe(gulp.dest('./'));
 };
 
-/**
- * Функция gzip
- */
-const toGzip = () => {
-  return gulp.src(PathName.BUILD)
-    .pipe(gulpGzip('build.gz'))
-    .pipe(gulp.dest('./'));
-};
-
 const zip = gulp.series(build, toZip);
-const gzip = gulp.series(build, toGzip);
 
-export {zip, gzip};
+export {zip as default};

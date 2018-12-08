@@ -4,7 +4,7 @@ import copy from './copy';
 import {compress, sprite} from './graphics';
 import html from './html';
 import styles from './styles';
-import {js, libs} from './javascript';
+import {js, libs} from './scripts';
 import {PathName} from './utils';
 
 

@@ -1,7 +1,7 @@
 import gulp from 'gulp';
 import html from './html';
 import styles from './styles';
-import {js} from './javascript';
+import {js} from './scripts';
 import {PathName} from './utils';
 import browserSync from 'browser-sync';
 
