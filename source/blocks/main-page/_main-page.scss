@@ -1,0 +1,14 @@
+.main-page {
+  margin: 0;
+  padding: 0;
+
+  background-color: color($main-c, background);
+}
+
+.main-page__footer-logo {
+  pointer-events: none;
+}
+
+.main-page__main-logo {
+  pointer-events: none;
+}

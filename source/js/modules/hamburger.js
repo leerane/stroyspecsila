@@ -1,3 +1,5 @@
-document.querySelector('.js-hamburger-button').addEventListener('click', function () {
-  this.classList.toggle('hamburger-button--close')
+const hamburgerButton = document.querySelector('.js-hamburger-button');
+
+hamburgerButton.addEventListener('click', function () {
+  hamburgerButton.classList.toggle('hamburger-button--close');
 });

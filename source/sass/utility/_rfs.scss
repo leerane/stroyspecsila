@@ -62,11 +62,6 @@ $rfs-breakpoint-unit: unit($rfs-breakpoint);
 
 // Responsive font-size mixin
 @mixin rfs($fs, $important: false) {
-  // Cache $fs unit
-  $fs-unit: if(type-of($fs) == "number", unit($fs), false);
-
-  // Add !important suffix if needed
-  $rfs-suffix: if($important, " !important", "");
 
   // If $fs isn't a number (like inherit) or $fs has a unit (not px or rem, like 1.5em) or $ is 0, just print the value
   @if not $fs-unit or $fs-unit != "" and $fs-unit != "px" and $fs-unit != "rem" or $fs == 0 {
@@ -192,6 +187,11 @@ $rfs-breakpoint-unit: unit($rfs-breakpoint);
       }
     }
   }
+  // Cache $fs unit
+  $fs-unit: if(type-of($fs) == "number", unit($fs), false);
+
+  // Add !important suffix if needed
+  $rfs-suffix: if($important, " !important", "");
 }
 
 // The responsive-font-size mixin uses RFS to rescale font sizes

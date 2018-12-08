@@ -1,0 +1,11 @@
+.main-title {
+  margin: 0;
+  padding: 0;
+
+  white-space: pre-line;
+
+  @include font-par(font-family(montserrat), font-weight(bold), font-size(h1-m), normal, color($main-c, primary), 1.5);
+
+  @include fluid-type(font-size(h1-m), font-size(h1-d));
+}
+

@@ -1,0 +1,220 @@
+.product-card {
+  margin: 0;
+  padding: 0;
+
+  &:focus,
+  &:hover {
+    @include box-shadow(0, 6px, 10px, 0, rgba(color($base-c, black), 0.1), false);
+  }
+
+  &:active {
+    @include box-shadow(0, 3px, 5px, 0, rgba(color($base-c, black), 0.1), false);
+  }
+}
+
+.product-card__inner {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+
+  @media (min-width: breakpoint(tablet)) {
+    position: relative;
+    flex-direction: row;
+    width: auto;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+  }
+}
+
+.product-card__image-wrapper {
+  width: 100%;
+  height: 0;
+  margin: 0;
+  padding-bottom: (195px/260px)*100%;
+  overflow: hidden;
+  background-color: #cacecd;
+
+  @media (min-width: breakpoint(tablet)) {
+    flex-shrink: 0;
+    flex-basis: auto;
+    width: 50%;
+    height: auto;
+    min-height: 334px;
+    margin: 0;
+    padding-bottom: 0;
+    overflow: visible;
+    background-color: #cacecd;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    flex-shrink: 0;
+    flex-basis: auto;
+    width: 100%;
+    max-width: 316px;
+    height: auto;
+    max-height: 462px;
+    margin: 0;
+    padding-bottom: 0;
+    overflow: visible;
+    background-color: #cacecd;
+  }
+}
+
+.product-card__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  background-color: #cacecd;
+
+  @media (min-width: breakpoint(desktop)) {
+    max-width: 316px;
+  }
+}
+
+.product-card__top {
+  position: relative;
+  margin-bottom: 41px;
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-bottom: 36px;
+  }
+}
+
+.product-card__description {
+  margin: 0;
+  padding: 27px 28px 28px 28px;
+
+  @include box-shadow(0, 0, 0, 1px, color($grey-c, dark), true);
+
+  @media (min-width: breakpoint(tablet)) {
+    display: flex;
+    flex-basis: auto;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    min-width: 335px;
+    padding-top: 26px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    display: flex;
+    flex-basis: auto;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    min-width: 316px;
+    max-width: 316px;
+    height: 100%;
+    padding: 26px 20px 28px 28px;
+  }
+}
+
+.product-card__title {
+  margin: 0 0 5px 0;
+  padding: 0;
+
+  @include font-par(font-family(opensans), font-weight(bold), font-size(base-t), normal, color($base-c, black), font-lh(base-md));
+
+  @media (min-width: breakpoint(tablet)) {
+    width: 86%;
+    font-size: font-size(other-l);
+  }
+}
+
+.product-card__text {
+  margin: 0;
+  padding: 0;
+
+  @include font-par(font-family(opensans), font-weight(regular), 13px, normal, color($base-c, black), font-lh(base-l));
+
+  @media (min-width: breakpoint(tablet)) {
+    font-size: font-size(base-m);
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-top: 0;
+  }
+}
+
+.product-card__bottom {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: breakpoint(tablet)) {
+    margin-bottom: -1px;
+    padding-right: 6px;
+    padding-left: 4px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    padding-right: 13px;
+    padding-left: 0;
+  }
+}
+
+.product-card__bottom::after {
+  content: "";
+  position: absolute;
+  top: -22px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: color($grey-c, dark);
+
+  @media (min-width: breakpoint(tablet)) {
+    content: "";
+    position: absolute;
+    top: -23px;
+    left: 4px;
+    width: 96%;
+    height: 1px;
+    background-color: color($grey-c, dark);
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    content: "";
+    position: absolute;
+    top: -23px;
+    left: -1px;
+    width: 95%;
+    height: 1px;
+    background-color: color($grey-c, dark);
+  }
+}
+
+.product-card__link {
+  width: 21px;
+  height: 21px;
+  margin-left: auto;
+}
+
+.product-card__price {
+  margin: 0;
+  padding: 0;
+
+  @include font-par(font-family(opensans), font-weight(bold), font-size(base-m), normal, color($base-c, black), font-lh(base-md));
+
+  @media (min-width: breakpoint(tablet)) {
+    font-size: font-size(base-t);
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-top: 1px;
+    letter-spacing: 0;
+  }
+}
+
+.product-card__icon {
+  margin-top: 1px;
+  margin-left: 2px;
+  color: #d3d2d2;
+  fill: #d3d2d2;
+}
