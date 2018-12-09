@@ -9,6 +9,8 @@ import {PathName} from './utils';
 
 /**
  * Функция zip
+ *
+ * @return {function()}
  */
 const toZip = () => {
   return gulp.src(PathName.BUILD + '/**', {base: PathName.BUILD})

@@ -11,6 +11,8 @@ const DESTINATION = 'httpdocs/';
 
 /**
  * Функция публикации сайта на удаленный сервер
+ *
+ * @return {function()}
  */
 const rsync = () => {
   return gulp.src('build/**')

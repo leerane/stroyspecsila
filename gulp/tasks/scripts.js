@@ -19,6 +19,8 @@ const webpack = webpackStream.webpack;
 
 /**
  * Функция компиляции JS файлов
+ *
+ * @return {function()}
  */
 const js = () => {
   return gulp.src(PathName.SOURCE + PathName.JS + PathName.JS_MODULES + PathName.JS_PATTERN, {
@@ -36,11 +38,13 @@ const js = () => {
     }))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(PathName.BUILD + PathName.JS))
-    .pipe(reload({ stream: true }));
+    .pipe(reload({stream: true}));
 };
 
 /**
  * Функция компиляции JS библиотек
+ *
+ * @return {function()}
  */
 const libs = () => {
   return gulp.src(PathName.SOURCE + PathName.LIBS + PathName.JS_PATTERN)

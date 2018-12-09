@@ -80,7 +80,7 @@
   },
   "scripts": {
     "editorconfig": "editorconfig-cli",
-    "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss \"!**/normalize.scss\"",
+    "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss \"!**/_normalize.scss\"",
     "eslint": "eslint \"source/**/*.js\" \"gulp/tasks/**/*.js\"",
     "test": "npm run editorconfig && npm run stylelint",
     "build": "gulp build:clean && gulp build",

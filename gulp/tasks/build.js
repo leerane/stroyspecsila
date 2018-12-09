@@ -14,6 +14,8 @@ import {PathName} from './utils';
 
 /**
  * Функция очистки папки build
+ *
+ * @return {function()}
  */
 const cleanup = () => {
   return clean(PathName.BUILD);
@@ -21,6 +23,8 @@ const cleanup = () => {
 
 /**
  * Функция сборки проекта
+ *
+ * @return {function()}
  */
 const build = gulp.series(copy, compress, sprite, html, styles, libs, js);
 
