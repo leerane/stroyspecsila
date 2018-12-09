@@ -16,7 +16,7 @@ const rsync = () => {
   return gulp.src('build/**')
     .pipe(rSync({
       root: 'build/',
-      hostname:  SSH,
+      hostname: SSH,
       destination: DESTINATION,
       archive: true,
       silent: false,
