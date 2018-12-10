@@ -60,7 +60,8 @@ const sprite = () => {
     .pipe(cheerio({
       run: ($) => {
         const excludedElements = [
-
+          '#pswp-arrow-left-icon',
+          '#pswp-arrow-right-icon'
         ];
         const ElementsData = {
           G: excludedElements.map((el) => el + ' g'),

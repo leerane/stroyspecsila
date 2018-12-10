@@ -1,5 +1,14 @@
+// Normalize
 @import "./utility/normalize";
+
+// Main config
 @import "./utility/config";
+
+// Other
+@import "../blocks/pswp/_pswp.scss";
+@import "../blocks/pswp/default-skin/_default-skin.scss";
+@import "../blocks/contact/_contact.scss";
+@import "../blocks/gallery/_gallery.scss";
 @import "../blocks/hamburger-button/_hamburger-button.scss";
 @import "../blocks/main-header/_main-header.scss";
 @import "../blocks/main-logo/_main-logo.scss";

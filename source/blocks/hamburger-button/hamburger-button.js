@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 const hamburgerButton = document.querySelector('.js-hamburger-button');
 
 hamburgerButton.addEventListener('click', function () {
