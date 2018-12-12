@@ -32,9 +32,10 @@
       <div class="main-header__inner">
 
         <!-- Главный логотип сайта -->
-        <a class="main-logo main-page__main-logo" aria-label="Логотип King's Lounge">
+        <a class="main-logo main-header__logo main-page__main-logo" aria-label="Логотип King's Lounge">
           <picture>
-            <source media="(min-width: 768px)" srcset="img/svg/logo--gradient.svg">
+            <source media="(min-width: 1150px)" srcset="img/svg/logo--main.svg">
+            <source media="(min-width: 768px)" srcset="img/svg/logo--tablet.svg">
             <img src="img/svg/logo--mobile.svg" alt="Логотип King's Lounge" class="main-logo__svg">
           </picture>
         </a>
@@ -43,44 +44,38 @@
         </button>
 
         <!-- Главная навигация сайта -->
-        <nav class="main-navigation">
+        <nav class="main-navigation main-header__navigation js-dropdown-navigation visually-hidden">
           <div class="main-navigation__inner">
             <ul class="main-navigation__list">
               <li class="main-navigation__item">
                 <a href="" class="main-navigation__link main-navigation__link--icon">
                   <svg aria-label="Home" width="21" height="21" class="main-navigation__svg main-header__svg--home">
                     <use xlink:href="img/svg/sprite.svg#home-icon"/>
-                  </svg>
-                  Главная</a>
+                  </svg>Главная</a>
               </li>
               <li class="main-navigation__item">
                 <a href="#menu" class="main-navigation__link main-navigation__link--icon">
                   <svg aria-label="Menu" width="21" height="21" class="main-navigation__svg main-header__svg--home">
                     <use xlink:href="img/svg/sprite.svg#menu-icon"/>
-                  </svg>
-                  Меню</a>
+                  </svg>Меню</a>
               </li>
               <li class="main-navigation__item">
                 <a href="#contact" class="main-navigation__link main-navigation__link--icon">
                   <svg aria-label="Contact" width="21" height="21" class="main-navigation__svg main-header__svg--home">
                     <use xlink:href="img/svg/sprite.svg#contact-icon"/>
-                  </svg>
-                  Контакты</a>
+                  </svg>Контакты</a>
               </li>
               <li class="main-navigation__item">
                 <a href="#gallery" class="main-navigation__link main-navigation__link--icon">
                   <svg aria-label="Gallery" width="21" height="21" class="main-navigation__svg main-header__svg--home">
                     <use xlink:href="img/svg/sprite.svg#gallery-icon"/>
-                  </svg>
-                  Галерея</a>
+                  </svg>Галерея</a>
               </li>
             </ul>
-            <a href="tel:+79035502500" class="main-header__call-link">
-              <svg aria-label="Phone" width="30.56" height="30.49" class="main-header__call-svg">
+            <a href="tel:+79035502500" class="main-navigation__call-link">
+              <svg aria-label="Phone" width="21" height="21" class="main-navigation__svg">
                 <use xlink:href="img/svg/sprite.svg#call-icon"/>
-              </svg>
-              +7 (903) 550-25-00
-            </a>
+              </svg>+7 (903) 550-25-00</a>
           </div>
         </nav>
       </div>
@@ -88,17 +83,48 @@
 
     <!-- Контент сайта -->
     <main class="main-content">
-      <h1 class="visually-hidden">Main page</h1>
 
       <!-- Промо -->
       <section class="promo-things">
         <div class="promo-things__inner">
-          <h2 class="promo-things__title">
-            <span class="promo-things__subtitle">Кальянная</span>King's Lounge
-          </h2>
-          <a href="#contact" class="button button--icon promo-things__address">Новоясеневский пр. 1Бс4</a>
+          <h2 class="promo-things__subtitle">Кальянная</h2>
+          <h1 class="promo-things__title">King's Lounge</h1>
           <div class="promo-things__order-buttons">
-            <a href="" class="promo-things__button"></a>
+            <a href="#contact" onclick="" class="button button--primary button--icon button--s--wide promo-things__button">Новоясеневский пр.
+              <svg aria-label="Phone" width="21" height="21" class="button__svg">
+                <use xlink:href="img/svg/sprite.svg#placeholder-icon"/>
+              </svg>
+            </a>
+            <a href="" class="button button--primary button--s--wide promo-things__button">Забронировать</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Меню -->
+      <section class="menu" id="menu">
+        <div class="menu__inner">
+          <h2 class="menu__title">Меню</h2>
+          <ul class="menu__list">
+            <li class="menu__item">
+              <article class="menu-card">
+                <div class="menu-card__inner">
+                  <h3 class="menu-card__title">Японская кухня</h3>
+                  <a href="" class="button menu-card__button">Открыть</a>
+                </div>
+              </article>
+            </li>
+            <li class="menu__item">
+              <article class="menu-card">
+                <div class="menu-card__inner">
+                  <h3 class="menu-card__title">Японская кухня</h3>
+                  <a href="" class="button menu-card__button">Открыть</a>
+                </div>
+              </article>
+            </li>
+          </ul>
+          <a href="#menu" class="contact__address"></a>
+          <div class="contact__order-buttons">
+            <a href="" class="contact__button"></a>
           </div>
         </div>
       </section>
@@ -209,6 +235,17 @@
           <a href="#contact" class="gallery__address"></a>
           <div class="gallery__order-buttons">
             <a href="" class="gallery__button"></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Бронирование -->
+      <section class="booking" id="booking">
+        <div class="booking__inner">
+          <h2 class="booking__title">Бронирование</h2>
+          <a href="#contact" class="contact__address"></a>
+          <div class="contact__order-buttons">
+            <a href="" class="contact__button"></a>
           </div>
         </div>
       </section>

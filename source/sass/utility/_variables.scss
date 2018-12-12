@@ -2,6 +2,7 @@
 
 // Z-index
 
+$z-index-default: 1 !default;
 $z-index-logo: 5 !default;
 $z-index-dropdown: 10 !default;
 $z-index-navbar-background: 15 !default;
@@ -13,6 +14,7 @@ $z-index-modal: 70 !default;
 $z-index-gallery: 1500 !default;
 
 $z-index: (
+  default: $z-index-default,
   logo: $z-index-logo,
   dropdown: $z-index-dropdown,
   navbar-background: $z-index-navbar-background,
@@ -151,7 +153,7 @@ $font-weights: (
 
 $font-size--xxxx-large: 79px !default;
 $font-size--xxx-large: 56px !default;
-$font-size--xx-large: 40px !default;
+$font-size--xx-large: 38px !default;
 $font-size--x-large: 28px !default;
 $font-size--large: 20px !default;
 $font-size--regular: 19px !default;

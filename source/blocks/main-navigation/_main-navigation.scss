@@ -1,6 +1,12 @@
 .main-navigation {
-  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: block;
   z-index: z-index(navbar);
+}
+
+.main-navigation__inner {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -9,24 +15,17 @@
 
   @media (min-width: breakpoint(tablet)) {
     flex-direction: row;
-    max-height: 89px;
     margin: 0 auto;
     padding: rem(0, 50);
   }
 
   @media (min-width: breakpoint(desktop)) {
     flex-direction: row;
+    flex-wrap: nowrap;
     max-width: 1150px;
-    max-height: 89px;
     margin: 0 auto;
-    padding: rem(0, 50);
+    padding: rem(0, 33);
   }
-}
-
-.main-navigation__inner {
-  margin: 0;
-  padding: 0;
-  width: 100%
 }
 
 .main-navigation__list {
@@ -45,14 +44,12 @@
 
   @media (min-width: breakpoint(tablet)) {
     flex-direction: row;
+    flex-shrink: 1;
   }
 }
 
 .main-navigation__item {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
+  display: block;
   padding: rem(20, 17);
   background-color: transparent;
 
@@ -72,7 +69,6 @@
 }
 
 .main-navigation__link {
-  display: block;
   margin: 0;
   padding: 0;
 
@@ -91,8 +87,11 @@
 }
 
 .main-navigation__link--icon {
-  position: relative;
   display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
 }
 
 .main-navigation__link--icon:focus,
@@ -106,7 +105,7 @@
 
 .main-navigation__svg {
   display: block;
-  margin: 0 15px 0 0 ;
+  margin: 0 15px 0 0;
   padding: 0;
 
   color: color($base-c, white);
@@ -119,18 +118,49 @@
   }
 }
 
-.main-navigation__svg--home {
-  top: 4px;
-  left: -44px;
-
-  @media (min-width: breakpoint(tablet)) {
-    top: 4px;
-    left: 0;
-  }
-}
-
 .main-navigation__hidden {
   @media (min-width: breakpoint(tablet)) {
     @include visually-hidden();
+  }
+}
+
+
+.main-navigation__call-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-shrink: 0;
+  padding: rem(20, 17);
+  background-color: transparent;
+  margin: 0;
+
+  @include font-par(font-family(default), font-weight(normal), font-size(base-m), normal, color($base-c, white), font-lh(root));
+
+  @include fluid-type(font-size(base-m), font-size(base-d));
+
+  @media (min-width: breakpoint(tablet)) {
+    padding: rem(25, 17);
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    padding: rem(30, 17);
+  }
+
+  &:focus,
+  &:hover {
+    color: color($main-c, primary);
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+.main-navigation__call-link:focus,
+.main-navigation__call-link:hover {
+  .main-navigation__svg {
+    color: color($main-c, primary);
+    fill: color($main-c, primary);
   }
 }

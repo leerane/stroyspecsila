@@ -1,14 +1,11 @@
-.contact {
+.booking {
   position: relative;
   margin: 0;
   padding: 0;
   background-color: color($main-c, background);
-  background-image: url("../img/svg/note-pattern.svg");
-  background-repeat: repeat;
-  background-size: 100px;
 }
 
-.contact__inner {
+.booking__inner {
   padding: rem(35, 30);
   margin: 0 auto;
 
@@ -22,7 +19,7 @@
   }
 }
 
-.contact__title {
+.booking__title {
   margin: 0 0 0.5em 0;
   padding: 0;
 

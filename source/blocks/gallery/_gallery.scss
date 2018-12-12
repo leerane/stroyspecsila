@@ -3,6 +3,9 @@
   margin: 0;
   padding: 0;
   background-color: color($main-c, background);
+  background-image: url("../img/svg/note-pattern.svg");
+  background-repeat: repeat;
+  background-size: 100px;
 }
 
 .gallery__inner {
@@ -20,7 +23,7 @@
 }
 
 .gallery__title {
-  margin: 0;
+  margin: 0 0 0.5em 0;
   padding: 0;
 
   white-space: pre-line;
