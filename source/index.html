@@ -38,35 +38,51 @@
             <img src="img/svg/logo--mobile.svg" alt="Логотип King's Lounge" class="main-logo__svg">
           </picture>
         </a>
-        <a href="tel:+79035502500" class="main-header__call">
-          <svg aria-label="Footer logo" width="30.56" height="30.49" class="main-header__call-svg">
-            <use xlink:href="img/svg/sprite.svg#call-icon"/>
-          </svg>
-          <span class="visually-hidden">+7 (903) 550-25-00</span>
-        </a>
         <button class="hamburger-button js-hamburger-button" type="button" aria-label="Hamburger button">
           <span class="hamburger-button__icon"></span>
         </button>
+
         <!-- Главная навигация сайта -->
-        <!-- <nav class="main-navigation">
+        <nav class="main-navigation">
           <div class="main-navigation__inner">
             <ul class="main-navigation__list">
               <li class="main-navigation__item">
-                <a href="#" class="link main-navigation__link">Главная</a>
+                <a href="" class="main-navigation__link main-navigation__link--icon">
+                  <svg aria-label="Home" width="21" height="21" class="main-navigation__svg main-header__svg--home">
+                    <use xlink:href="img/svg/sprite.svg#home-icon"/>
+                  </svg>
+                  Главная</a>
               </li>
               <li class="main-navigation__item">
-                <a href="#" class="link main-navigation__link">Меню</a>
+                <a href="#menu" class="main-navigation__link main-navigation__link--icon">
+                  <svg aria-label="Menu" width="21" height="21" class="main-navigation__svg main-header__svg--home">
+                    <use xlink:href="img/svg/sprite.svg#menu-icon"/>
+                  </svg>
+                  Меню</a>
               </li>
               <li class="main-navigation__item">
-                <a href="#" class="link main-navigation__link">Контакты</a>
+                <a href="#contact" class="main-navigation__link main-navigation__link--icon">
+                  <svg aria-label="Contact" width="21" height="21" class="main-navigation__svg main-header__svg--home">
+                    <use xlink:href="img/svg/sprite.svg#contact-icon"/>
+                  </svg>
+                  Контакты</a>
               </li>
               <li class="main-navigation__item">
-                <a href="#" class="link main-navigation__link">Галерея</a>
+                <a href="#gallery" class="main-navigation__link main-navigation__link--icon">
+                  <svg aria-label="Gallery" width="21" height="21" class="main-navigation__svg main-header__svg--home">
+                    <use xlink:href="img/svg/sprite.svg#gallery-icon"/>
+                  </svg>
+                  Галерея</a>
               </li>
             </ul>
-            <a href="tel:+7(903)550-25-00" class="main-navigation__phone">+7 (903) 550-25-00</a>
+            <a href="tel:+79035502500" class="main-header__call-link">
+              <svg aria-label="Phone" width="30.56" height="30.49" class="main-header__call-svg">
+                <use xlink:href="img/svg/sprite.svg#call-icon"/>
+              </svg>
+              +7 (903) 550-25-00
+            </a>
           </div>
-        </nav> -->
+        </nav>
       </div>
     </header>
 
@@ -77,9 +93,10 @@
       <!-- Промо -->
       <section class="promo-things">
         <div class="promo-things__inner">
-          <h2 class="promo-things__title">Кальянная
-            King's Lounge!</h2>
-          <a href="#contact" class="promo-things__address"></a>
+          <h2 class="promo-things__title">
+            <span class="promo-things__subtitle">Кальянная</span>King's Lounge
+          </h2>
+          <a href="#contact" class="button button--icon promo-things__address">Новоясеневский пр. 1Бс4</a>
           <div class="promo-things__order-buttons">
             <a href="" class="promo-things__button"></a>
           </div>
@@ -87,9 +104,17 @@
       </section>
 
       <!-- Галерея -->
-      <section class="gallery">
+      <section class="gallery" id="gallery">
         <div class="gallery__inner">
           <h2 class="gallery__title">Галерея</h2>
+          <ul class="gallery__list">
+            <li class="gallery__item"></li>
+            <li class="gallery__item"></li>
+            <li class="gallery__item"></li>
+            <li class="gallery__item"></li>
+            <li class="gallery__item"></li>
+            <li class="gallery__item"></li>
+          </ul>
           <!-- Root element of PhotoSwipe. Must have class pswp. -->
           <button id="btn">Open PhotoSwipe</button>
 
@@ -189,7 +214,7 @@
       </section>
 
       <!-- Контакты -->
-      <section class="contact">
+      <section class="contact" id="contact">
         <div class="contact__inner">
           <h2 class="contact__title">Где нас найти?</h2>
           <a href="#contact" class="contact__address"></a>

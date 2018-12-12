@@ -49,7 +49,7 @@
 
   @each $item in $values {
     @if (type-of $item == number) {
-      $result: round($item / strip-unit(font-size(root)));
+      $result: ($item / strip-unit(font-size(root)));
       $list: append($list, #{$result}rem);
     }
   }

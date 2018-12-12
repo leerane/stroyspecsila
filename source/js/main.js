@@ -1,8 +1,15 @@
 //import {render} from './modules/utils';
 //import Xhr from './modules/backend';
+import ScrollReveal from 'scrollreveal';
 import PhotoSwipe from 'photoswipe';
 import PhotoSwipeUI_Default from '../../node_modules/photoswipe/dist/photoswipe-ui-default'
 import '../blocks/hamburger-button/hamburger-button';
+
+
+function revealsSectionTitles() {
+  const titles = document.querySelectorAll('')
+}
+ScrollReveal().reveal('.tagline', { delay: 500 });
 
 var openPhotoSwipe = function () {
   const body = document.body;

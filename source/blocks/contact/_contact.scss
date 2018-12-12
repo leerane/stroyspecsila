@@ -13,7 +13,12 @@
   margin: 0 auto;
 
   @media (min-width: breakpoint(tablet)) {
-    padding: rem(60, 50);
+    padding: rem(50, 50);
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    padding: rem(70, 50);
+    max-width: 1150px;
   }
 }
 
@@ -23,7 +28,7 @@
 
   white-space: pre-line;
 
-  @include font-par(font-family(montserrat), font-weight(bold), font-size(h2-m), normal, color($main-c, primary), 1.5);
+  @include font-par(font-family(default), font-weight(bold), font-size(h2-m), normal, color($main-c, primary), font-lh(root));
 
   @include fluid-type(font-size(h2-m), font-size(h2-d));
 }
