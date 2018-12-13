@@ -31,6 +31,8 @@
 }
 
 .menu__list {
+  @include clear-list();
+
   width: 100%;
   display: flex;
   flex-shrink: 0;
@@ -38,7 +40,9 @@
   flex-direction: column;
   background-color: transparent;
 
-  @include clear-list();
+  @media (min-width: breakpoint(tablet)) {
+    flex-direction: row;
+  }
 }
 
 .menu__item {
@@ -54,7 +58,7 @@
 }
 
 .menu-card__inner {
-  padding: rem(20, 10);
+  padding: rem(20, 30);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -66,13 +70,16 @@
   @include fluid-type(font-size(base-m), font-size(base-d));
 
   @media (min-width: breakpoint(desktop)) {
-    padding: rem(30, 20);
+    padding: rem(20, 30);
     max-width: 400px;
   }
 
   &:focus,
   &:hover {
-    box-shadow: 0 0 0 3px color($main-c, primary);
+    transform: translateY(-5px);
+    box-shadow:
+      0 0 0 3px color($main-c, primary),
+      0 10px 70px 0 rgba(color($main-c, primary), 0.15);
   }
 }
 
@@ -82,7 +89,7 @@
 
   white-space: pre-line;
 
-  @include font-par(font-family(default), font-weight(normal), font-size(base-m), normal, color($base-c, white), font-lh(root));
+  @include font-par(font-family(default), font-weight(bold), font-size(h3-m), normal, color($base-c, white), font-lh(root));
 
-  @include fluid-type(font-size(base-m), font-size(base-d));
+  @include fluid-type(font-size(h3-m), font-size(h3-d));
 }
