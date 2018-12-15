@@ -1,19 +1,8 @@
-import './modules/utils';
-//import Xhr from './modules/backend';
-import ScrollReveal from 'scrollreveal';
-import PhotoSwipe from 'photoswipe';
-import PhotoSwipeUI_Default from '../../node_modules/photoswipe/dist/photoswipe-ui-default'
-import '../blocks/js-dropdown-navigation/js-dropdown-navigation';
-import '../blocks/js-hamburger-button/js-hamburger-button';
-import '../blocks/js-main-header/js-main-header';
-import '../blocks/js-scroll-top/js-scroll-top';
-import '../blocks/main-map/main-map';
 
 
-function revealsSectionTitles() {
-  const titles = document.querySelectorAll('')
-}
-ScrollReveal().reveal('.tagline', { delay: 500 });
+import PhotoSwipe from "photoswipe";
+import PhotoSwipeUI_Default from "photoswipe/dist/photoswipe-ui-default";
+
 
 var openPhotoSwipe = function () {
   const body = document.body;

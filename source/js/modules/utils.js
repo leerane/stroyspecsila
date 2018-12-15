@@ -258,6 +258,19 @@ const render = (html) => {
   return template.content;
 };
 
+/**
+ * Функция скрытия скролла для элемента
+ *
+ * @param {string} str
+ */
+const changeOverflow = (str) => {
+  const element = document.querySelector(str);
+  const temp = element.style.overflow;
+  element.style.overflow = temp && temp !== 'visible'
+    ? 'visible'
+    : 'hidden';
+};
+
 export {
   makePlural,
   removeChildren,
@@ -271,6 +284,7 @@ export {
   disableFormChildren,
   enableFormChildren,
   debounce,
-  render
+  render,
+  changeOverflow
 };
 

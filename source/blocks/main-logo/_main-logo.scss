@@ -7,6 +7,12 @@
   }
 }
 
+.main-logo--sticky {
+  @media (min-width: breakpoint(desktop)) {
+    transform: translate(-50%, -70%) scale(0.5);
+  }
+}
+
 .main-logo:focus,
 .main-logo:hover {
   .main-logo__svg {

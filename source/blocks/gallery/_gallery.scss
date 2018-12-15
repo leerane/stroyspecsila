@@ -28,23 +28,53 @@
 
   white-space: pre-line;
 
-  @include font-par(font-family(default), font-weight(bold), font-size(h2-m), normal, color($main-c, primary), font-lh(root));
+  @include font-par(font-family(default), font-weight(bold), font-size(h2-m), normal, color($base-c, white), font-lh(root));
 
   @include fluid-type(font-size(h2-m), font-size(h2-d));
 }
 
 
 .gallery__list {
-  @include clear-list();
-  background-color: red;
+  width: 100%;
   display: flex;
-  margin: 0 -15px;
+  flex-shrink: 0;
+  flex-basis: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: transparent;
+
+  @include clear-list();
+
+  @include font-par(font-family(default), font-weight(normal), font-size(base-m), normal, color($base-c, white), font-lh(root));
+
+  @include fluid-type(font-size(base-m), font-size(base-d));
 }
 
 .gallery__item {
-  margin: 0;
+  margin: 0 15px 15px 0;
   padding: 0 15px;
   width: 150px;
   height: 150px;
   background-color: green;
+}
+
+.gallery__link {
+  margin: 0;
+  padding: 0;
+  display: block;
+  transition: all 0.3s ease-in-out;
+  box-shadow: inset 0 0 0 3px color($main-c, primary);
+
+  &:focus,
+  &:hover {
+    transform: translateY(5px);
+  }
+}
+
+.gallery__image {
+  display: block;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: auto;
 }

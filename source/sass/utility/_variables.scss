@@ -3,10 +3,11 @@
 // Z-index
 
 $z-index-default: 1 !default;
-$z-index-logo: 5 !default;
-$z-index-dropdown: 10 !default;
-$z-index-navbar-background: 15 !default;
-$z-index-navbar: 20 !default;
+$z-index-dropdown: 5 !default;
+$z-index-header: 10 !default;
+$z-index-logo: 15 !default;
+$z-index-navbar-background: 20 !default;
+$z-index-navbar: 25 !default;
 $z-index-hamburger: 30 !default;
 $z-index-tooltip: 50 !default;
 $z-index-modal-background: 60 !default;
@@ -15,8 +16,9 @@ $z-index-gallery: 1500 !default;
 
 $z-index: (
   default: $z-index-default,
-  logo: $z-index-logo,
   dropdown: $z-index-dropdown,
+  header: $z-index-header,
+  logo: $z-index-logo,
   navbar-background: $z-index-navbar-background,
   navbar: $z-index-navbar,
   hamburger: $z-index-hamburger,

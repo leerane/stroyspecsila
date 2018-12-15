@@ -17,6 +17,9 @@
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.min.css">
 
+    <!-- Yandex.Maps API -->
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=8bccf721-324d-4188-ad44-35dddcdbf6a3" type="text/javascript"></script>
+
     <!-- Picturefill -->
     <script>
       document.createElement( "picture" );
@@ -28,7 +31,7 @@
   <body class="main-page">
 
     <!-- Шапка сайта -->
-    <header class="main-header">
+    <header class="main-header js-main-header">
       <div class="main-header__inner">
 
         <!-- Главный логотип сайта -->
@@ -71,11 +74,13 @@
                     <use xlink:href="img/svg/sprite.svg#gallery-icon"/>
                   </svg>Галерея</a>
               </li>
+              <li class="main-navigation__item">
+                <a href="tel:+79035502500" class="main-navigation__link main-navigation__link--icon">
+                  <svg aria-label="Phone" width="21" height="21" class="main-navigation__svg">
+                    <use xlink:href="img/svg/sprite.svg#call-icon"/>
+                  </svg>+7 (903) 550-25-00</a>
+              </li>
             </ul>
-            <a href="tel:+79035502500" class="main-navigation__call-link">
-              <svg aria-label="Phone" width="21" height="21" class="main-navigation__svg">
-                <use xlink:href="img/svg/sprite.svg#call-icon"/>
-              </svg>+7 (903) 550-25-00</a>
           </div>
         </nav>
       </div>
@@ -113,7 +118,7 @@
                     <source type="image/webp" srcset="img/japanese-cuisine@1x.webp 1x, img/japanese-cuisine@2x.webp 2x">
                     <img src="img/japanese-cuisine@1x.jpg" srcset="img/japanese-cuisine@2x.jpg 2x" alt="Японская кухня" class="menu-card__image">
                   </picture>
-                  <a href="" class="button menu-card__button">Открыть</a>
+                  <a href="" class="button button--primary menu-card__button">Открыть</a>
                 </div>
               </article>
             </li>
@@ -125,7 +130,7 @@
                     <source type="image/webp" srcset="img/drink-menu@1x.webp 1x, img/drink-menu@2x.webp 2x">
                     <img src="img/drink-menu@1x.jpg" srcset="img/drink-menu@2x.jpg 2x" alt="Напитки" class="menu-card__image">
                   </picture>
-                  <a href="" class="button menu-card__button">Открыть</a>
+                  <a href="" class="button button--primary menu-card__button">Открыть</a>
                 </div>
               </article>
             </li>
@@ -149,101 +154,7 @@
             <li class="gallery__item"></li>
             <li class="gallery__item"></li>
           </ul>
-          <!-- Root element of PhotoSwipe. Must have class pswp. -->
-          <button id="btn">Open PhotoSwipe</button>
-
-          <!-- Root element of PhotoSwipe. Must have class pswp. -->
-          <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-            <!-- Background of PhotoSwipe.
-                 It's a separate element, as animating opacity is faster than rgba(). -->
-            <div class="pswp__bg"></div>
-
-            <!-- Slides wrapper with overflow:hidden. -->
-            <div class="pswp__scroll-wrap">
-
-              <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
-              <div class="pswp__container">
-                <!-- don't modify these 3 pswp__item elements, data is added later on -->
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-              </div>
-
-              <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-              <div class="pswp__ui pswp__ui--hidden">
-
-                <div class="pswp__top-bar">
-
-                  <!--  Controls are self-explanatory. Order can be changed. -->
-
-                  <div class="pswp__counter"></div>
-
-                  <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                      <div class="pswp__preloader__cut">
-                        <div class="pswp__preloader__donut"></div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <button class="pswp__button pswp__button--zoom" title="Zoom in/out">
-                    <svg aria-label="Zoom in" tabindex="-1" width="21.51" height="21.265" class="pswp__icon-svg pswp__icon-svg--zoom-in">
-                      <use xlink:href="img/svg/sprite.svg#pswp-zoom-in-icon"/>
-                    </svg>
-                    <svg aria-label="Zoom in" tabindex="-1" width="21.51" height="21.265" class="pswp__icon-svg pswp__icon-svg--zoom-out">
-                      <use xlink:href="img/svg/sprite.svg#pswp-zoom-out-icon"/>
-                    </svg>
-                  </button>
-
-                  <button class="pswp__button pswp__button--fs" title="Toggle fullscreen">
-                    <svg aria-label="Expand" tabindex="-1" width="21.605" height="20.75" class="pswp__icon-svg pswp__icon-svg--expand">
-                      <use xlink:href="img/svg/sprite.svg#pswp-expand-icon"/>
-                    </svg>
-                    <svg aria-label="Minimize" tabindex="-1" width="21.605" height="20.75" class="pswp__icon-svg pswp__icon-svg--minimize">
-                      <use xlink:href="img/svg/sprite.svg#pswp-minimize-icon"/>
-                    </svg>
-                  </button>
-
-                  <button class="pswp__button pswp__button--close" title="Close (Esc)">
-                    <svg aria-label="Close" tabindex="-1" width="21.55" height="21.545" class="pswp__icon-svg">
-                      <use xlink:href="img/svg/sprite.svg#pswp-close-icon"/>
-                    </svg>
-                  </button>
-
-                </div>
-
-                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                  <div class="pswp__share-tooltip"></div>
-                </div>
-
-                <div class="pswp__buttons">
-                  <button class="pswp__button pswp__button--arrow--left" title="Previous">
-                    <svg aria-label="Previous" width="60" height="60" class="pswp__icon-svg pswp__icon-svg--arrow">
-                      <use xlink:href="img/svg/sprite.svg#pswp-arrow-left-icon"/>
-                    </svg>
-                  </button>
-
-                  <button class="pswp__button pswp__button--arrow--right" title="Next">
-                    <svg aria-label="Next" width="60" height="60" class="pswp__icon-svg pswp__icon-svg--arrow">
-                      <use xlink:href="img/svg/sprite.svg#pswp-arrow-right-icon"/>
-                    </svg>
-                  </button>
-                </div>
-
-                <div class="pswp__caption">
-                  <div class="pswp__caption__center"></div>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-          <a href="#contact" class="gallery__address"></a>
-          <div class="gallery__order-buttons">
-            <a href="" class="gallery__button"></a>
-          </div>
+          <a href="#" class="button button--primary button--s--wide gallery__button">Больше фото :)</a>
         </div>
       </section>
 
@@ -261,11 +172,17 @@
       <!-- Контакты -->
       <section class="contact" id="contact">
         <div class="contact__inner">
-          <h2 class="contact__title">Где нас найти?</h2>
-          <a href="#contact" class="contact__address"></a>
-          <div class="contact__order-buttons">
-            <a href="" class="contact__button"></a>
+          <div class="contact__info">
+            <h2 class="contact__title">Где нас найти?</h2>
+            <ul class="contact__list">
+              <li class="contact__item">
+                <a href="mailto:booking@kingslounge.ru" class="contact__link">booking@kingslounge.ru</a>
+              </li>
+              <li class="contact__item">Новоясеневский проспект, 1Б стр. 4</li>
+              <li class="contact__item">340 метров от м. Теплый стан</li>
+            </ul>
           </div>
+          <div class="main-map" id="main-map"></div>
         </div>
       </section>
     </main>
@@ -274,28 +191,26 @@
     <footer class="main-footer">
       <div class="main-footer__inner">
         <a href="" class="main-footer__logo main-page__footer-logo">
-          <svg aria-label="Footer logo" width="101.61" height="34.06" class="main-footer__logo-svg">
-            <use xlink:href="img/svg/sprite.svg#logo--full"/>
-          </svg>
+          <img src="img/svg/logo--tablet.svg" width="120" height="70" alt="Логотип King's Lounge" class="main-footer__logo-svg">
         </a>
         <ul class="social-list">
           <li class="social-list__item">
             <a href="#" class="social-link"><span class="visually-hidden">Instagram</span>
-              <svg aria-label="Instagram" width="28.05" height="28.05" class="social-link__svg">
+              <svg aria-label="Instagram" width="36" height="36" class="social-link__svg">
                 <use xlink:href="img/svg/sprite.svg#instagram-icon"/>
               </svg>
             </a>
           </li>
           <li class="social-list__item">
             <a href="#" class="social-link"><span class="visually-hidden">VK</span>
-              <svg aria-label="VK" width="28.05" height="28.05" class="social-link__svg">
+              <svg aria-label="VK" width="36" height="36" class="social-link__svg">
                 <use xlink:href="img/svg/sprite.svg#vk-icon"/>
               </svg>
             </a>
           </li>
           <li class="social-list__item">
             <a href="#" class="social-link"><span class="visually-hidden">Twitter</span>
-              <svg aria-label="Facebook" width="28.05" height="28.05" class="social-link__svg">
+              <svg aria-label="Facebook" width="36" height="36" class="social-link__svg">
                 <use xlink:href="img/svg/sprite.svg#facebook-icon"/>
               </svg>
             </a>
@@ -304,6 +219,13 @@
       </div>
     </footer>
 
+    <!-- Скролл наверх -->
+    <a href="#" class="js-scroll-top main-page__js-scroll-top">
+      <svg aria-label="Top" width="20" height="20" class="js-scroll-top__svg">
+        <use xlink:href="img/svg/sprite.svg#up-icon"/>
+      </svg>
+    </a>
+
     <!-- SVG for Everybody -->
     <script src="js/libs/svg4everybody/svg4everybody.min.js"></script>
     <script>svg4everybody();</script>
@@ -311,7 +233,95 @@
     <!-- Main script -->
     <script src="js/bundle.js"></script>
 
-    <!-- Google Maps API -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBv3Mue0MjRxWehq81r_XyQS8Lnr-iQ-VQ&callback"></script>
+    <!-- Шаблон галереи -->
+    <template id="gallery-template">
+      <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+        <!-- Background of PhotoSwipe.
+             It's a separate element, as animating opacity is faster than rgba(). -->
+        <div class="pswp__bg"></div>
+
+        <!-- Slides wrapper with overflow:hidden. -->
+        <div class="pswp__scroll-wrap">
+
+          <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+          <div class="pswp__container">
+            <!-- don't modify these 3 pswp__item elements, data is added later on -->
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+          </div>
+
+          <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+          <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+              <!--  Controls are self-explanatory. Order can be changed. -->
+
+              <div class="pswp__counter"></div>
+
+              <div class="pswp__preloader">
+                <div class="pswp__preloader__icn">
+                  <div class="pswp__preloader__cut">
+                    <div class="pswp__preloader__donut"></div>
+                  </div>
+                </div>
+              </div>
+
+              <button class="pswp__button pswp__button--zoom" title="Zoom in/out">
+                <svg aria-label="Zoom in" tabindex="-1" width="21.51" height="21.265" class="pswp__icon-svg pswp__icon-svg--zoom-in">
+                  <use xlink:href="img/svg/sprite.svg#pswp-zoom-in-icon"/>
+                </svg>
+                <svg aria-label="Zoom in" tabindex="-1" width="21.51" height="21.265" class="pswp__icon-svg pswp__icon-svg--zoom-out">
+                  <use xlink:href="img/svg/sprite.svg#pswp-zoom-out-icon"/>
+                </svg>
+              </button>
+
+              <button class="pswp__button pswp__button--fs" title="Toggle fullscreen">
+                <svg aria-label="Expand" tabindex="-1" width="21.605" height="20.75" class="pswp__icon-svg pswp__icon-svg--expand">
+                  <use xlink:href="img/svg/sprite.svg#pswp-expand-icon"/>
+                </svg>
+                <svg aria-label="Minimize" tabindex="-1" width="21.605" height="20.75" class="pswp__icon-svg pswp__icon-svg--minimize">
+                  <use xlink:href="img/svg/sprite.svg#pswp-minimize-icon"/>
+                </svg>
+              </button>
+
+              <button class="pswp__button pswp__button--close" title="Close (Esc)">
+                <svg aria-label="Close" tabindex="-1" width="21.55" height="21.545" class="pswp__icon-svg">
+                  <use xlink:href="img/svg/sprite.svg#pswp-close-icon"/>
+                </svg>
+              </button>
+
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+              <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <div class="pswp__buttons">
+              <button class="pswp__button pswp__button--arrow--left" title="Previous">
+                <svg aria-label="Previous" width="60" height="60" class="pswp__icon-svg pswp__icon-svg--arrow">
+                  <use xlink:href="img/svg/sprite.svg#pswp-arrow-left-icon"/>
+                </svg>
+              </button>
+
+              <button class="pswp__button pswp__button--arrow--right" title="Next">
+                <svg aria-label="Next" width="60" height="60" class="pswp__icon-svg pswp__icon-svg--arrow">
+                  <use xlink:href="img/svg/sprite.svg#pswp-arrow-right-icon"/>
+                </svg>
+              </button>
+            </div>
+
+            <div class="pswp__caption">
+              <div class="pswp__caption__center"></div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </template>
   </body>
 </html>
