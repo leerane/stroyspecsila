@@ -45,9 +45,19 @@
 
   @include clear-list();
 
+  margin-bottom: rem(25);
+
   @include font-par(font-family(default), font-weight(normal), font-size(base-m), normal, color($base-c, white), font-lh(root));
 
   @include fluid-type(font-size(base-m), font-size(base-d));
+
+  @media (min-width: breakpoint(tablet)) {
+    margin-bottom: rem(35);
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-bottom: rem(40);
+  }
 }
 
 .gallery__item {
@@ -56,6 +66,7 @@
   width: 150px;
   height: 150px;
   background-color: green;
+  transition: 0.5s ease-in-out;
 }
 
 .gallery__link {
@@ -77,4 +88,14 @@
   padding: 0;
   height: 100%;
   width: auto;
+}
+
+.gallery__button {
+  max-width: 100%;
+  width: 100%;
+
+  @media (min-width: breakpoint(tablet)) {
+    max-width: 320px;
+    margin: 0 auto;
+  }
 }

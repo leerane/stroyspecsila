@@ -2,18 +2,36 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: z-index(modal);
   width: 100%;
   height: 100vh;
   margin: 0;
   padding: 0;
-  background-color: rgba(color($base-c, white), 0.9);
+  background-color: rgba(color($base-c, black), 0.9);
   visibility: hidden;
   opacity: 0;
-  transition: opacity 0.35s ease, visibility 0.3s ease;
+  transition: opacity 0.35s ease-in-out, visibility 0.3s ease-in-out;
 }
 
 .modal-overlay--open {
   visibility: visible;
   opacity: 1;
+}
+
+.modal-overlay__error {
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  max-width: 320px;
+  max-height: 336px;
+  background-color: color($main-c, background);
+  box-shadow: inset 0 0 0 2px color($main-c, primary);
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease, top 0.3s ease;
+
+  @media (min-width: breakpoint(tablet)) {
+    width: 566px;
+  }
 }

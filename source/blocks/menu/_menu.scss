@@ -57,6 +57,7 @@
   margin: 0;
   width: 260px;
   height: 250px;
+  transition: 0.5s ease-in-out;
 
   @media (min-width: breakpoint(tablet)) {
     width: 100%;

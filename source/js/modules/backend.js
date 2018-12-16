@@ -7,7 +7,7 @@ const TIMEOUT = 7500;
 const STATUS_CODE_DONE = 200;
 
 /**
- * Класс, создающий XHLHttpRequest
+ * Класс, создающий XMLHttpRequest
  */
 export default class Xhr {
 

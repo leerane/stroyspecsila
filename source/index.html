@@ -9,10 +9,9 @@
     <title>Тест</title>
 
     <!--- Preloading fonts and other stuff -->
-    <link rel="preload" href="fonts/montserratregular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/montserratmedium.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/montserratbold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/montserratblack.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/mullerregular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/mullermedium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/mullerbold.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.min.css">
@@ -154,7 +153,7 @@
             <li class="gallery__item"></li>
             <li class="gallery__item"></li>
           </ul>
-          <a href="#" class="button button--primary button--s--wide gallery__button">Больше фото :)</a>
+          <a href="#" class="button button--primary button--s--wide gallery__button">Больше фото</a>
         </div>
       </section>
 
@@ -175,6 +174,9 @@
           <div class="contact__info">
             <h2 class="contact__title">Где нас найти?</h2>
             <ul class="contact__list">
+              <li class="contact__item">
+                <a href="tel:+79035502500" class="contact__link">+7 (903) 550-25-00</a>
+              </li>
               <li class="contact__item">
                 <a href="mailto:booking@kingslounge.ru" class="contact__link">booking@kingslounge.ru</a>
               </li>
@@ -321,6 +323,19 @@
 
         </div>
 
+      </div>
+    </template>
+
+    <!-- Сообщение об ошибке-->
+    <template id="error">
+      <div class="modal-overlay visually-hidden">
+        <div class="error modal-overlay__error">
+          <div class="error__inner">
+            <h3 class="error__title">Ошибка</h3>
+            <p class="error__message">Данные не были загружены</p>
+            <button class="button button--primary button--s--wide error__button" href="#">Обновить</button>
+          </div>
+        </div>
       </div>
     </template>
   </body>

@@ -88,7 +88,7 @@
   }
 }
 
-.contact__item:nth-child(3) {
+.contact__item:last-child {
   @media (min-width: breakpoint(desktop)) {
     margin: 0;
   }

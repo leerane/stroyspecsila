@@ -29,7 +29,7 @@ const showNavigation = () => {
 };
 
 /**
- * Функция закрытия бургера и навигации при якорях
+ * Функция закрытия бургера и навигации при якорях (клике)
  */
 const closeAnchorsNavigation = () => {
   [...navigation.children].forEach((item) => {
