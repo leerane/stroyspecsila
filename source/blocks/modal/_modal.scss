@@ -1,9 +1,9 @@
-.error {
+.modal {
   padding: 0;
   margin: 0;
 }
 
-.error__inner {
+.modal__inner {
   padding: rem(20, 30);
   margin: 0 auto;
   display: flex;
@@ -25,7 +25,7 @@
   }
 }
 
-.error__title {
+.modal__title {
   display: block;
   margin: 0 0 0.5em 0;
   padding: 0;
@@ -34,5 +34,14 @@
 
   @include font-par(font-family(default), font-weight(bold), font-size(h2-m), normal, color($base-c, white), 1.5);
 
-  @include fluid-type(font-size(h2-m), font-size(h2-d));
+  @include fluid-type(font-size(h3-m), font-size(h3-d));
+}
+
+.modal__message {
+  padding: 0;
+  margin: 0 0 1em 0;
+}
+
+.modal__button {
+  margin: 0;
 }

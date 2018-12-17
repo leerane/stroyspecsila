@@ -41,15 +41,15 @@ const makePlural = (number, options) => {
  * @return {boolean}
  */
 const checkParentNode = (parent, element) => {
-  let isEqual = false;
+  let isInside = false;
   while (element.parentNode) {
     if (element.parentNode === parent) {
-      isEqual = true;
+      isInside = true;
       break;
     }
     element = element.parentNode;
   }
-  return isEqual;
+  return isInside;
 };
 
 /**
@@ -77,10 +77,13 @@ const removeChildren = (parent, elements) => {
  *
  * @param {Event} evt
  * @param {addedCallback} callback
+ * @return {function()}
  */
 const escPressHandler = (evt, callback) => {
-  if (evt.keyCode === ESC_KEYCODE) {
-    callback();
+  return (...args) => {
+    if (evt.keyCode === ESC_KEYCODE) {
+      callback(...args);
+    }
   }
 };
 
@@ -95,11 +98,14 @@ const escPressHandler = (evt, callback) => {
  * @param {Event} evt
  * @param {Element} element
  * @param {addedCallback} callback
+ * @return {function()}
  */
 const outsideClickHandler = (evt, element, callback) => {
-  const target = evt.target;
-  if (target !== element && !checkParentNode(element, target)) {
-    callback();
+  return (...args) => {
+    const target = evt.target;
+    if (target !== element && !checkParentNode(element, target)) {
+      callback(...args);
+    }
   }
 };
 

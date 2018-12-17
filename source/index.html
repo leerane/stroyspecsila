@@ -41,6 +41,8 @@
             <img src="img/svg/logo--mobile.svg" alt="Логотип King's Lounge" class="main-logo__svg">
           </picture>
         </a>
+
+        <!-- Бургер -->
         <button class="hamburger-button js-hamburger-button" type="button" aria-label="Hamburger button">
           <span class="hamburger-button__icon"></span>
         </button>
@@ -89,13 +91,13 @@
     <main class="main-content">
 
       <!-- Промо -->
-      <section class="promo-things">
+      <section class="promo-things" aria-labelledby="promoTitle" aria-describedby="promoInfo">
         <div class="promo-things__inner">
           <h2 class="promo-things__subtitle">Кальянная</h2>
-          <h1 class="promo-things__title">King's Lounge</h1>
-          <div class="promo-things__order-buttons">
+          <h1 class="promo-things__title" id="promoTitle">King's Lounge</h1>
+          <div class="promo-things__order-buttons" id="promoInfo">
             <a href="#contact" onclick="" class="button button--primary button--icon button--s--wide promo-things__button">Новоясеневский пр.
-              <svg aria-label="Phone" width="21" height="21" class="button__svg">
+              <svg aria-label="Placeholder" width="21" height="21" class="button__svg">
                 <use xlink:href="img/svg/sprite.svg#placeholder-icon"/>
               </svg>
             </a>
@@ -104,11 +106,48 @@
         </div>
       </section>
 
+      <!-- Услуги -->
+      <section class="advantages" id="advantages" aria-labelledby="advantagesTitle" aria-describedby="advantagesInfo">
+        <div class="advantages__inner">
+          <h2 class="advantages__title" id="advantagesTitle">Почему мы?</h2>
+          <ul class="advantages__list" id="advantagesInfo">
+            <li class="advantages__item">
+              <svg aria-label="Service" width="80" height="80" class="advantages__svg">
+                <use xlink:href="img/svg/sprite.svg#service-icon"/>
+              </svg>
+              <h3 class="advantages__header">Обслуживание</h3>
+              <p class="advantages__description">Приедем на ваше мероприятие с едой и кальянами!</p>
+            </li>
+            <li class="advantages__item">
+              <svg aria-label="Food" width="80" height="80" class="advantages__svg">
+                <use xlink:href="img/svg/sprite.svg#food-icon"/>
+              </svg>
+              <h3 class="advantages__header">Кухня</h3>
+              <p class="advantages__description">Европейская, американская и японская кухни. Есть возможность доставки и самовывоза</p>
+            </li>
+            <li class="advantages__item">
+              <svg aria-label="VIP" width="80" height="80" class="advantages__svg">
+                <use xlink:href="img/svg/sprite.svg#vip-icon"/>
+              </svg>
+              <h3 class="advantages__header">VIP комнаты</h3>
+              <p class="advantages__description">Уютные закрытые комнаты для хорошей компании</p>
+            </li>
+            <li class="advantages__item">
+              <svg aria-label="Games" width="80" height="80" class="advantages__svg">
+                <use xlink:href="img/svg/sprite.svg#games-icon"/>
+              </svg>
+              <h3 class="advantages__header">Развлечения</h3>
+              <p class="advantages__description">Sony PlayStation 4, настольные игры, просмотр трансляций</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
       <!-- Меню -->
-      <section class="menu" id="menu">
+      <section class="menu" id="menu" aria-labelledby="menuTitle" aria-describedby="menuInfo">
         <div class="menu__inner">
-          <h2 class="menu__title">Меню</h2>
-          <ul class="menu__list">
+          <h2 class="menu__title" id="menuTitle">Меню</h2>
+          <ul class="menu__list" id="menuInfo">
             <li class="menu__item">
               <article class="menu-card">
                 <div class="menu-card__inner">
@@ -134,45 +173,34 @@
               </article>
             </li>
           </ul>
-          <a href="#menu" class="contact__address"></a>
-          <div class="contact__order-buttons">
-            <a href="" class="contact__button"></a>
-          </div>
         </div>
       </section>
 
       <!-- Галерея -->
-      <section class="gallery" id="gallery">
+      <section class="gallery" id="gallery" aria-labelledby="galleryTitle" aria-describedby="galleryInfo">
         <div class="gallery__inner">
-          <h2 class="gallery__title">Галерея</h2>
-          <ul class="gallery__list">
-            <li class="gallery__item"></li>
-            <li class="gallery__item"></li>
-            <li class="gallery__item"></li>
-            <li class="gallery__item"></li>
-            <li class="gallery__item"></li>
-            <li class="gallery__item"></li>
+          <h2 class="gallery__title" id="galleryTitle">Галерея</h2>
+          <ul class="gallery__list" id="galleryInfo" aria-label="Фотографии">
           </ul>
           <a href="#" class="button button--primary button--s--wide gallery__button">Больше фото</a>
         </div>
       </section>
 
       <!-- Бронирование -->
-      <section class="booking" id="booking">
+      <section class="booking" id="booking" aria-labelledby="bookingTitle" aria-describedby="bookingInfo">
         <div class="booking__inner">
-          <h2 class="booking__title">Бронирование</h2>
-          <a href="#contact" class="contact__address"></a>
-          <div class="contact__order-buttons">
-            <a href="" class="contact__button"></a>
-          </div>
+          <h2 class="booking__title" id="bookingTitle">Бронирование</h2>
+          <form action="" id="bookingInfo">
+
+          </form>
         </div>
       </section>
 
       <!-- Контакты -->
-      <section class="contact" id="contact">
+      <section class="contact" id="contact" aria-labelledby="contactTitle" aria-describedby="contactInfo">
         <div class="contact__inner">
-          <div class="contact__info">
-            <h2 class="contact__title">Где нас найти?</h2>
+          <div class="contact__info" id="contactInfo">
+            <h2 class="contact__title" id="contactTitle">Где нас найти?</h2>
             <ul class="contact__list">
               <li class="contact__item">
                 <a href="tel:+79035502500" class="contact__link">+7 (903) 550-25-00</a>
@@ -184,7 +212,7 @@
               <li class="contact__item">340 метров от м. Теплый стан</li>
             </ul>
           </div>
-          <div class="main-map" id="main-map"></div>
+          <div class="main-map" id="main-map" role="presentation" aria-hidden="true"></div>
         </div>
       </section>
     </main>
@@ -192,26 +220,26 @@
     <!-- Подвал сайта -->
     <footer class="main-footer">
       <div class="main-footer__inner">
-        <a href="" class="main-footer__logo main-page__footer-logo">
+        <a href="" class="main-footer__logo main-page__footer-logo" aria-label="Логотип King's Lounge">
           <img src="img/svg/logo--tablet.svg" width="120" height="70" alt="Логотип King's Lounge" class="main-footer__logo-svg">
         </a>
         <ul class="social-list">
           <li class="social-list__item">
-            <a href="#" class="social-link"><span class="visually-hidden">Instagram</span>
+            <a href="#" class="social-link" aria-label="Instagram"><span class="visually-hidden">Instagram</span>
               <svg aria-label="Instagram" width="36" height="36" class="social-link__svg">
                 <use xlink:href="img/svg/sprite.svg#instagram-icon"/>
               </svg>
             </a>
           </li>
           <li class="social-list__item">
-            <a href="#" class="social-link"><span class="visually-hidden">VK</span>
+            <a href="#" class="social-link" aria-label="VK"><span class="visually-hidden">VK</span>
               <svg aria-label="VK" width="36" height="36" class="social-link__svg">
                 <use xlink:href="img/svg/sprite.svg#vk-icon"/>
               </svg>
             </a>
           </li>
           <li class="social-list__item">
-            <a href="#" class="social-link"><span class="visually-hidden">Twitter</span>
+            <a href="#" class="social-link" aria-label="Twitter"><span class="visually-hidden">Twitter</span>
               <svg aria-label="Facebook" width="36" height="36" class="social-link__svg">
                 <use xlink:href="img/svg/sprite.svg#facebook-icon"/>
               </svg>
@@ -222,7 +250,7 @@
     </footer>
 
     <!-- Скролл наверх -->
-    <a href="#" class="js-scroll-top main-page__js-scroll-top">
+    <a href="#" class="js-scroll-top main-page__js-scroll-top" aria-label="Scroll top">
       <svg aria-label="Top" width="20" height="20" class="js-scroll-top__svg">
         <use xlink:href="img/svg/sprite.svg#up-icon"/>
       </svg>
@@ -328,15 +356,16 @@
 
     <!-- Сообщение об ошибке-->
     <template id="error">
-      <div class="modal-overlay visually-hidden">
-        <div class="error modal-overlay__error">
-          <div class="error__inner">
-            <h3 class="error__title">Ошибка</h3>
-            <p class="error__message">Данные не были загружены</p>
-            <button class="button button--primary button--s--wide error__button" href="#">Обновить</button>
+      <div class="modal-overlay visually-hidden" tabindex="-1" aria-hidden="true" role="dialog">
+        <div class="modal modal-overlay__modal" role="document">
+          <div class="modal__inner">
+            <h3 class="modal__title">Ошибка</h3>
+            <p class="modal__message">Данные не были загружены</p>
+            <button class="button button--primary button--s--wide modal__button" href="#">Закрыть</button>
           </div>
         </div>
       </div>
     </template>
+
   </body>
 </html>

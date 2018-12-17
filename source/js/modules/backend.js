@@ -27,33 +27,35 @@ export default class Xhr {
    * @param {errorCallback} error
    */
   constructor({method = 'GET', url, timeout = TIMEOUT, data = null, success, error}) {
-    Object.assign(this, {method, url, timeout, data, success, error});
+
+    // Опции
+    this.options = {method, url, timeout, data, success, error};
 
     const xhr = new XMLHttpRequest();
-    xhr.timeout = this.timeout;
+    xhr.timeout = this.options.timeout;
 
     // Устанавливаем (ограничиваем) тип получаемых данных
-    if (method === 'GET') {
+    if (this.options.method === 'GET') {
       xhr.responseType = 'json';
     }
 
     // Обработка ошибок до 4xx включительно
     xhr.addEventListener('load', () => {
       if (xhr.status === STATUS_CODE_DONE) {
-        this.success(xhr.response);
+        this.options.success(xhr.response);
       } else {
-        this.error(`Номер ошибки: ${xhr.status}.`);
+        this.options.error(`Номер ошибки: ${xhr.status}.`);
       }
     });
 
     // Ошибка "задержки"
     xhr.addEventListener('timeout', () => {
-      this.error(`Запрос не успел выполниться за ${xhr.timeout}мс.`);
+      this.options.error(`Запрос не успел выполниться за ${xhr.timeout}мс.`);
     });
 
     // Ошибка соединения
     xhr.addEventListener('error', () =>  {
-      this.error(`Произошла ошибка соединения ${xhr.status}.`);
+      this.options.error(`Произошла ошибка соединения ${xhr.status}.`);
     });
 
     // Открытие запроса

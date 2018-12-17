@@ -23,7 +23,7 @@
 }
 
 .gallery__title {
-  margin: 0 0 0.5em 0;
+  margin: 0 0 0.7em 0;
   padding: 0;
 
   white-space: pre-line;
@@ -62,11 +62,15 @@
 
 .gallery__item {
   margin: 0 15px 15px 0;
-  padding: 0 15px;
+  padding: 0;
   width: 150px;
   height: 150px;
-  background-color: green;
   transition: 0.5s ease-in-out;
+}
+
+.gallery__figure {
+  margin: 0;
+  padding: 0;
 }
 
 .gallery__link {

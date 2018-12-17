@@ -2,13 +2,13 @@
  * Модуль галереи (превью)
  */
 
-import {render} from '../../js/modules/utils';
+import {render, debounce} from '../../js/modules/utils';
 import Xhr from '../../js/modules/backend';
-import Modal from '../../js/modules/modal'
+import {showErrorModal} from '../modal/modal'
 
 const ID = '152';
+const AMOUNT = 6;
 const ServerUrl = {
-  AMOUNT: '6',
   POSTS: `http://leerane.mcdir.ru/wp-json/wp/v2/posts/${ID}`,
   PARENT: `http://leerane.mcdir.ru/wp-json/wp/v2/media?parent=${ID}`
 };
@@ -72,27 +72,31 @@ const renderImage = ({'media_details': {'width': WIDTH, 'height': HEIGHT, 'sizes
  * Функция добавления на страницу фотографий
  *
  * @param {string} parent
- * @param {Object[]} data
+ * @param {number} amount
  */
-const appendImages = (parent = '.gallery__list', data) => {
-  return function () {
+const appendImages = (parent = '.gallery__list', amount) => {
+  return function (data) {
     let appendedImages = [];
     const photosFragment = document.createDocumentFragment();
     const parentElement = document.querySelector(parent);
 
-    [...data].forEach((item, index) => {
-      photosFragment.appendChild(render(item, index));
-      appendedImages.push(render(item, index));
+    const filteredArray = [...data].filter((item, index) => index < amount);
+
+    filteredArray.forEach((item, index) => {
+      photosFragment.appendChild(renderImage(item, index));
+      appendedImages.push(renderImage(item, index));
     });
 
     parentElement.appendChild(photosFragment);
   }
 };
 
+// Создаем запрос к фотографиям
 const images = new Xhr({
   method: 'GET',
   url: ServerUrl.PARENT,
   timeout: 7500,
-  success: appendImages('.gallery'),
-  error:
+  success: appendImages('.gallery__list', AMOUNT),
+  error: showErrorModal
 });
+

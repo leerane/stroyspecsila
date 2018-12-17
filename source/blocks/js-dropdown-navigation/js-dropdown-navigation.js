@@ -23,7 +23,7 @@ const closeNavigation = () => {
  * Функция закрытия бургера и навигации при ресайзе
  */
 const showNavigation = () => {
-  if (mediaQuery.matches) {
+  if (mediaQuery.matches && navigation.classList.contains('main-navigation--active')) {
     closeNavigation();
   }
 };
