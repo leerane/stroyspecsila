@@ -118,7 +118,7 @@ const outsideClickHandler = (evt, element, callback) => {
  * @param {boolean} relative Относительно страницы (не экрана)
  * @return {Object}
  */
-const getCoords = (elem, relative) => {
+const getCoords = (elem, relative = true) => {
   const box = elem.getBoundingClientRect();
 
   const body = document.body;

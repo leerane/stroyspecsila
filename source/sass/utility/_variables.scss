@@ -162,10 +162,12 @@ $font-size--regular: 19px !default;
 $font-size--small: 18px !default;
 $font-size--smaller: 17px !default;
 $font-size--smallest: 16px !default;
+$font-size--sub: 14px !default;
 $font-size--root: 15px !default;
 
 $font-sizes: (
   root: $font-size--root,
+  sub: $font-size--sub,
   base-m: $font-size--smallest,
   base-t: $font-size--smaller,
   base-d: $font-size--small,

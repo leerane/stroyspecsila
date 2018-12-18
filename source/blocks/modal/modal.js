@@ -208,7 +208,7 @@ const showErrorModal = () => {
       template: '#error',
       hiddenClass:'visually-hidden',
       activeClass: 'modal-overlay--open',
-      disableScroll:true,
+      disableScroll: true,
       Block: {
         OVERLAY: '.modal-overlay',
         MAIN: '.modal',

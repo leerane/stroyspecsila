@@ -52,7 +52,7 @@
           <div class="main-navigation__inner">
             <ul class="main-navigation__list">
               <li class="main-navigation__item">
-                <a href="" class="main-navigation__link main-navigation__link--icon">
+                <a class="main-navigation__link main-page__link main-navigation__link--icon">
                   <svg aria-label="Home" width="21" height="21" class="main-navigation__svg main-header__svg--home">
                     <use xlink:href="img/svg/sprite.svg#home-icon"/>
                   </svg>Главная</a>
@@ -101,7 +101,7 @@
                 <use xlink:href="img/svg/sprite.svg#placeholder-icon"/>
               </svg>
             </a>
-            <a href="" class="button button--primary button--s--wide promo-things__button">Забронировать</a>
+            <a href="#booking" class="button button--primary button--s--wide promo-things__button">Забронировать</a>
           </div>
         </div>
       </section>
@@ -156,7 +156,7 @@
                     <source type="image/webp" srcset="img/japanese-cuisine@1x.webp 1x, img/japanese-cuisine@2x.webp 2x">
                     <img src="img/japanese-cuisine@1x.jpg" srcset="img/japanese-cuisine@2x.jpg 2x" alt="Японская кухня" class="menu-card__image">
                   </picture>
-                  <a href="" class="button button--primary menu-card__button">Открыть</a>
+                  <a href="/assets/japanese-cuisine.pdf" target="_blank" class="button button--primary menu-card__button">Открыть</a>
                 </div>
               </article>
             </li>
@@ -168,7 +168,7 @@
                     <source type="image/webp" srcset="img/drink-menu@1x.webp 1x, img/drink-menu@2x.webp 2x">
                     <img src="img/drink-menu@1x.jpg" srcset="img/drink-menu@2x.jpg 2x" alt="Напитки" class="menu-card__image">
                   </picture>
-                  <a href="" class="button button--primary menu-card__button">Открыть</a>
+                  <a href="/assets/drink-menu.pdf" target="_blank" class="button button--primary menu-card__button">Открыть</a>
                 </div>
               </article>
             </li>
@@ -190,8 +190,28 @@
       <section class="booking" id="booking" aria-labelledby="bookingTitle" aria-describedby="bookingInfo">
         <div class="booking__inner">
           <h2 class="booking__title" id="bookingTitle">Бронирование</h2>
-          <form action="" id="bookingInfo">
-
+          <form action="http://kingslounge.ru/mail.php" method="post" enctype="multipart/form-data" autocomplete="off" id="bookingInfo" class="form booking__form">
+           <div class="form__inner">
+             <div class="form__fields-wrapper">
+               <div class="input form__block">
+                 <label for="initials-field" class="input__label input__label--required">ФИО:</label>
+                 <input type="text" class="input__control" name="initials" id="initials-field" placeholder="Джон Доу" minlength="5" maxlength="50" required>
+               </div>
+               <div class="input form__block">
+                 <label for="phone-field" class="input__label input__label--required">Телефон:</label>
+                 <input type="tel" class="input__control" name="phone" id="phone-field" placeholder="+7XXXXXXXXXX"required>
+               </div>
+               <div class="input form__block">
+                 <label for="mail-field" class="input__label input__label--required">E-mail:</label>
+                 <input type="email" class="input__control" name="mail" id="mail-field" placeholder="johndoe@example.com" required>
+               </div>
+               <div class="textarea form__block">
+                 <label for="comments-field" class="input__label textarea__label">Комментарий:</label>
+                 <textarea class="textarea__control" name="comments" id="comments-field" placeholder="Дополнительная информация"></textarea>
+               </div>
+             </div>
+             <button class="button button--primary button--s--wide form__button" type="submit">Отправить</button>
+           </div>
           </form>
         </div>
       </section>

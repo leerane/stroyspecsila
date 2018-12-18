@@ -1,5 +1,6 @@
 import path from 'path';
 import {FileName, PathName} from './gulp/tasks/utils';
+import WorkboxPlugin from 'workbox-webpack-plugin';
 
 const NODE_ENV = process.env.NODE_ENV ? 'production' : 'development';
 const isDevelopment = NODE_ENV === 'development';

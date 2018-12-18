@@ -23,8 +23,12 @@ const closeNavigation = () => {
  * Функция закрытия бургера и навигации при ресайзе
  */
 const showNavigation = () => {
-  if (mediaQuery.matches && navigation.classList.contains('main-navigation--active')) {
-    closeNavigation();
+  if (mediaQuery.matches) {
+    if (navigation.classList.contains('main-navigation--active')) {
+      closeNavigation();
+    } else {
+      navigation.classList.remove('visually-hidden');
+    }
   }
 };
 
@@ -34,8 +38,10 @@ const showNavigation = () => {
 const closeAnchorsNavigation = () => {
   [...navigation.children].forEach((item) => {
     item.addEventListener('click', function () {
-      closeNavigation();
-      navigation.classList.add('visually-hidden');
+      if (!mediaQuery.matches) {
+        closeNavigation();
+        navigation.classList.add('visually-hidden');
+      }
     });
   })
 };
