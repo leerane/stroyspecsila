@@ -1,7 +1,9 @@
 import Xhr from '../../js/modules/backend';
+import {render} from '../../js/modules/utils';
+import animate from '../../js/modules/animate';
+import {nth} from '../../js/modules/animations';
 import {showErrorModal} from '../modal/modal';
 import {loader} from '../loader/loader';
-import {render} from '../../js/modules/utils';
 
 /**
  * Модуль формы
@@ -183,12 +185,28 @@ const showSuccessMessage = (str, parent) => {
 
     // Шаблон текста
     const template = `
-    <p class="form__success-text"></p>
+    <p class="form__success-text">${str}</p>
   `;
 
+    // Вставляем текст в разметку
     parentElement.appendChild(render(template));
 
-    bookingFormButton.classList.remove('visually-hidden');
+    const appendedText = parentElement.querySelector('.form__success-text');
+
+    // Анимационная функция
+    animate({
+      draw: function (progress) {
+        return appendedText.style.opacity = 1 - progress;
+      },
+      timing: nth(5),
+      duration: 2000
+    });
+
+    // Удаляем текст об успешной загрузке и возвращаем кнопку
+    setTimeout(() => {
+      parentElement.removeChild(appendedText);
+      bookingFormButton.style.display = 'block';
+    }, 2000);
   }
 };
 
@@ -196,7 +214,9 @@ const showSuccessMessage = (str, parent) => {
  * Предфункция загрузки на сервер
  */
 const upload = () => {
-  bookingFormButton.classList.add('visually-hidden');
+
+  // Скрываем кнопку и добавляем лоадер (три точки)
+  bookingFormButton.style.display = 'none';
   return loader('.booking__form');
 };
 

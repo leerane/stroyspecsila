@@ -36,52 +36,76 @@ export default class Xhr {
     this.options = {method, url, timeout, data, success, error, load, download};
 
     const xhr = new XMLHttpRequest();
-    xhr.timeout = this.options.timeout;
 
-    // Устанавливаем (ограничиваем) тип получаемых данных и добавляем "предфункцию"
-    if (this.options.method === 'GET') {
+    // Если имеем POST запрос - используем XMLHttpRequestUpload
+    if (this.options.method === 'POST') {
+
+      // Timeout
+      xhr.timeout = this.options.timeout;
+
+      // Добавляем "предфункцию" на стадию загрузки
+      xhr.addEventListener('progress', () => {
+        this.options.load();
+      });
+
+      // Обработка ошибок до 4xx включительно
+      xhr.addEventListener('load', () => {
+        if (xhr.status === STATUS_CODE_DONE) {
+
+          // Удаляем результат "предфункции"
+          this.options.load.remove();
+
+          // Ответ от сервера
+          this.options.success(xhr.response);
+        } else {
+          this.options.error(`Номер ошибки: ${xhr.status}.`);
+        }
+      });
+
+      // Ошибка "задержки"
+      xhr.addEventListener('timeout', () => {
+        this.options.error(`Запрос не успел выполниться за ${xhr.timeout}мс.`);
+      });
+
+      // Ошибка соединения
+      xhr.addEventListener('error', () =>  {
+        this.options.error(`Произошла ошибка соединения ${xhr.status}.`);
+      });
+    } else if (this.options.method === 'GET') {
+
+      // Timeout
+      xhr.timeout = this.options.timeout;
+
+      // Устанавливаем (ограничиваем) тип получаемых данных и добавляем "предфункцию"
       xhr.responseType = 'json';
       xhr.addEventListener('progress', () => {
         this.options.download();
-      })
-    }
+      });
 
-    if (this.options.method === 'POST') {
-      console.log(this.options.load);
-      xhr.upload.addEventListener('progress', () => {
+      // Обработка ошибок до 4xx включительно
+      xhr.addEventListener('load', () => {
+        if (xhr.status === STATUS_CODE_DONE) {
 
-        this.options.load();
-      })
-    }
-
-    // Обработка ошибок до 4xx включительно
-    xhr.addEventListener('load', () => {
-      if (xhr.status === STATUS_CODE_DONE) {
-
-        // Удаляем результат "предфункции"
-        if (this.options.method === 'GET') {
+          // Удаляем результат "предфункции"
           this.options.download.remove();
+
+          // Ответ от сервера
+          this.options.success(xhr.response);
+        } else {
+          this.options.error(`Номер ошибки: ${xhr.status}.`);
         }
+      });
 
-        if (this.options.method === 'POST') {
-          this.options.load.remove();
-        }
+      // Ошибка "задержки"
+      xhr.addEventListener('timeout', () => {
+        this.options.error(`Запрос не успел выполниться за ${xhr.timeout}мс.`);
+      });
 
-        this.options.success(xhr.response);
-      } else {
-        this.options.error(`Номер ошибки: ${xhr.status}.`);
-      }
-    });
-
-    // Ошибка "задержки"
-    xhr.addEventListener('timeout', () => {
-      this.options.error(`Запрос не успел выполниться за ${xhr.timeout}мс.`);
-    });
-
-    // Ошибка соединения
-    xhr.addEventListener('error', () =>  {
-      this.options.error(`Произошла ошибка соединения ${xhr.status}.`);
-    });
+      // Ошибка соединения
+      xhr.addEventListener('error', () =>  {
+        this.options.error(`Произошла ошибка соединения ${xhr.status}.`);
+      });
+    }
 
     // Открытие запроса
     xhr.open(method, url);

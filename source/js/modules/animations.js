@@ -32,12 +32,18 @@ function makeEaseInOut(timing) {
 /**
  * В степени n
  *
- * @param {number} timeFraction Непрерывно возрастающее число от 0 до 1
  * @param {number} n
- * @return {number}
+ * @return {function(*)}
  */
-function nth(timeFraction, n) {
-  return Math.pow(timeFraction, n)
+function nth(n) {
+  /**
+   * Функция возврата
+   *
+   * @param {number} timeFraction Непрерывно возрастающее число от 0 до 1
+   */
+  return function(timeFraction) {
+    return Math.pow(timeFraction, n);
+  }
 }
 
 /**
@@ -63,12 +69,13 @@ function arc(timeFraction) {
 /**
  * Back: стрельба из лука
  *
- * @param {number} timeFraction
  * @param {number} x Коэффициент упругости
- * @return {number}
+ * @return {function(*)}
  */
-function oliver(timeFraction, x) {
-  return Math.pow(timeFraction, 2) * ((x + 1) * timeFraction - x);
+function oliver(x) {
+  return function(timeFraction) {
+    return Math.pow(timeFraction, 2) * ((x + 1) * timeFraction - x);
+  }
 }
 
 /**

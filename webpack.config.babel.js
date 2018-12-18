@@ -1,16 +1,18 @@
 import path from 'path';
 import {FileName, PathName} from './gulp/tasks/utils';
-import WorkboxPlugin from 'workbox-webpack-plugin';
 
 const NODE_ENV = process.env.NODE_ENV ? 'production' : 'development';
 const isDevelopment = NODE_ENV === 'development';
 
 module.exports = {
-  entry: PathName.SOURCE + PathName.JS + '/' + FileName.ENTRY,
+  entry: {
+    main: PathName.SOURCE + PathName.JS + '/' + FileName.ENTRY,
+    page: PathName.SOURCE + PathName.JS + '/' + FileName.PAGE
+  },
   mode: NODE_ENV,
   output: {
     path: path.resolve(__dirname, PathName.BUILD + PathName.JS),
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
   },
   devtool: isDevelopment ? 'source-map' : 'eval',
   module: {

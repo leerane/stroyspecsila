@@ -25,6 +25,7 @@ const FileName = {
   SPRITE: '_sprite.scss',
   LAST_ATTR: '_last-attr.scss',
   ENTRY: 'main.js',
+  PAGE: 'page.js',
   BUNDLE: 'bundle.js'
 };
 

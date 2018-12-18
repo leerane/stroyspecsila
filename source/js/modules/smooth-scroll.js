@@ -37,7 +37,7 @@ const smoothScroll = (item, duration = 2000) => {
       END: endPoint
     };
 
-    // Внешняя функция
+    // Анимационная функция
     animate({
       draw: function (progress) {
         return window.scrollTo(0, progress * Position.END);

@@ -32,10 +32,9 @@ const loader = (parent) => {
 
   const appendLoader = () => {
     parentElement.appendChild(renderLoader());
-    loaderElement = parentElement.lastElementChild;
+    loaderElement = parentElement.querySelector('.loader');
   };
   appendLoader.remove = () => {
-    console.log(loaderElement);
     parentElement.removeChild(loaderElement);
   };
 

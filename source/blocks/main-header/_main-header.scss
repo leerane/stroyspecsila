@@ -10,7 +10,7 @@
   margin: 0;
   padding: 0;
 
-  background-color: color($main-c, background);
+  background-color: color($main-c, header);
 }
 
 .main-header--sticky {
@@ -60,7 +60,10 @@
   left: 100%;
   transform: translate(0, -20%);
   z-index: z-index(navbar);
-  transition: all 0.3s ease-in-out;
+  transition:
+    transform 0.3s ease-in-out,
+    left 0.3s ease-in-out,
+    top 0.3s ease-in-out;
 
   @media (min-width: breakpoint(tablet)) {
     margin: 0;

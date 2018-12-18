@@ -264,6 +264,10 @@ const render = (html) => {
   return template.content;
 };
 
+const showElement = () => {
+
+}
+
 /**
  * Функция скрытия скролла для элемента
  *
