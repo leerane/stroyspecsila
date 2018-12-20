@@ -91,6 +91,10 @@
   margin: 0;
   padding: 0;
   height: 100%;
+
+  @media (min-width: breakpoint(tablet)) {
+    height: auto;
+  }
 }
 
 .menu-card__inner {
@@ -112,6 +116,7 @@
   @include fluid-type(font-size(base-m), font-size(base-d));
 
   @media (min-width: breakpoint(tablet)) {
+    height: auto;
     padding: rem(30, 50);
   }
 
