@@ -17,6 +17,7 @@ const closeNavigation = () => {
   navigation.classList.remove('visually-hidden');
   navigation.classList.remove('main-navigation--active');
   body.style.overflow = 'visible';
+  body.style.pointerEvents = 'auto';
 };
 
 /**

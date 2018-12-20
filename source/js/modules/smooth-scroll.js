@@ -3,14 +3,31 @@
  */
 
 import {getCoords} from './utils';
-import {linear} from './animations';
+import {makeEaseInOut, nth} from './animations';
 import animate from './animate';
 
 /**
  * Функция плавного скролла
+ *
+ * @param {Element} item
+ * @param {number} duration
+ * @param {function(*)} timing
+ * @param {string} header Селектор шапки
  */
-const smoothScroll = (item, duration = 2000) => {
+const smoothScroll = (item, duration = 2000, timing, header = '.js-main-header') => {
   return function () {
+
+    // Высота фиксированной шапки
+    let mainHeader;
+    let mainHeaderHeight;
+
+    try {
+      mainHeader = document.querySelector(header);
+      mainHeaderHeight = mainHeader.offsetHeight;
+    } catch (e) {
+      mainHeader = 0;
+      mainHeaderHeight = mainHeader;
+    }
 
     // Находим цель
     let refTarget;
@@ -33,16 +50,17 @@ const smoothScroll = (item, duration = 2000) => {
      * @property {number} END
      */
     const Position = {
-      START: window.pageYOffset,
-      END: endPoint
+      START: pageYOffset,
+      END: endPoint,
+      HEADER: mainHeaderHeight
     };
 
     // Анимационная функция
     animate({
       draw: function (progress) {
-        return window.scrollTo(0, progress * Position.END);
+        return window.scrollTo(0, (Position.END - Position.START - Position.HEADER) * progress + Position.START);
       },
-      timing: linear,
+      timing: timing,
       duration: duration
     })
   }
@@ -60,7 +78,7 @@ const appendSmooth = (...elements) => {
   const anchors = document.querySelectorAll(`a[href*="#"]:not([href="#"]):not([href="#0"]), ${additionalElements}`);
 
   anchors.forEach((item) => {
-    item.addEventListener('click', smoothScroll(item, 1000));
+    item.addEventListener('click', smoothScroll(item, 600, makeEaseInOut(nth(2))));
   })
 };
 

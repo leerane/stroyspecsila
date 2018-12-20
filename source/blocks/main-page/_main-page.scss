@@ -5,6 +5,10 @@
   background-color: color($main-c, header);
 }
 
+.main-page--full {
+  background-color: color($main-c, background);
+}
+
 .main-page__footer-logo {
   pointer-events: none;
 }

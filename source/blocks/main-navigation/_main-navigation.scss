@@ -16,6 +16,7 @@
 .main-navigation--active {
   left: 50%;
   transform: translate(-40%, -20%);
+  z-index: z-index(navbar);
 }
 
 .main-navigation__inner {
@@ -71,13 +72,14 @@
   }
 
   @media (min-width: breakpoint(desktop)) {
+    min-width: 21%;
     padding: rem(30, 17);
   }
 }
 
-.main-navigation__item:nth-child(3) {
+.main-navigation__item:nth-child(4n+3) {
   @media (min-width: breakpoint(desktop)) {
-    margin-right: auto;
+    margin-left: auto;
   }
 }
 

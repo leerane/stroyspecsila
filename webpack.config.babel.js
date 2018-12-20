@@ -7,7 +7,9 @@ const isDevelopment = NODE_ENV === 'development';
 module.exports = {
   entry: {
     main: PathName.SOURCE + PathName.JS + '/' + FileName.ENTRY,
-    page: PathName.SOURCE + PathName.JS + '/' + FileName.PAGE
+    page: PathName.SOURCE + PathName.JS + '/' + FileName.PAGE,
+    gallery: PathName.SOURCE + PathName.JS + '/' + FileName.GALLERY,
+    wp: PathName.SOURCE + PathName.JS + '/' + FileName.WORDPRESS
   },
   mode: NODE_ENV,
   output: {

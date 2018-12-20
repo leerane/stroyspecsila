@@ -124,8 +124,8 @@ const getCoords = (elem, relative = true) => {
   const body = document.body;
   const docEl = document.documentElement;
 
-  const scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop;
-  const scrollLeft = window.pageXOffset || docEl.scrollLeft || body.scrollLeft;
+  const scrollTop = pageYOffset || docEl.scrollTop || body.scrollTop;
+  const scrollLeft = pageXOffset || docEl.scrollLeft || body.scrollLeft;
 
   const clientTop = docEl.clientTop || body.clientTop || 0;
   const clientLeft = docEl.clientLeft || body.clientLeft || 0;
@@ -264,10 +264,6 @@ const render = (html) => {
   return template.content;
 };
 
-const showElement = () => {
-
-}
-
 /**
  * Функция скрытия скролла для элемента
  *
@@ -279,6 +275,19 @@ const changeOverflow = (str) => {
   element.style.overflow = temp && temp !== 'visible'
     ? 'visible'
     : 'hidden';
+};
+
+/**
+ * Функция скрытия клика для элемента
+ *
+ * @param {string} str
+ */
+const changePointerEvents = (str) => {
+  const element = document.querySelector(str);
+  const temp = element.style.pointerEvents;
+  element.style.pointerEvents = temp && temp !== 'auto'
+    ? 'auto'
+    : 'none';
 };
 
 export {
@@ -295,6 +304,7 @@ export {
   enableFormChildren,
   debounce,
   render,
-  changeOverflow
+  changeOverflow,
+  changePointerEvents
 };
 

@@ -2,7 +2,7 @@
  * Модуль открытия (закрытия) бургера и навигации при клике на бургер
  */
 
-import {changeOverflow} from '../../js/modules/utils';
+import {changeOverflow, changePointerEvents} from '../../js/modules/utils';
 
 const hamburgerButton = document.querySelector('.js-hamburger-button');
 
@@ -13,6 +13,7 @@ const toggleNavigation = () => {
   const navigation = document.querySelector('.js-dropdown-navigation');
 
   changeOverflow('body');
+  changePointerEvents('body');
 
   hamburgerButton.classList.toggle('hamburger-button--close');
   navigation.classList.remove('visually-hidden');
