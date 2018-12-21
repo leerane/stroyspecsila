@@ -64,12 +64,12 @@ export default class Xhr {
 
       // Ошибка "задержки"
       xhr.addEventListener('timeout', () => {
-        this.options.error(`Запрос не успел выполниться за ${xhr.timeout}мс.`);
+        this.options.error(`Запрос не успел выполниться за ${xhr.timeout}мс. Повторите попытку позже`);
       });
 
       // Ошибка соединения
       xhr.addEventListener('error', () =>  {
-        this.options.error(`Произошла ошибка соединения ${xhr.status}.`);
+        this.options.error(`Произошла ошибка соединения ${xhr.status}. Повторите попытку позже`);
       });
     } else if (this.options.method === 'GET') {
 
@@ -98,12 +98,12 @@ export default class Xhr {
 
       // Ошибка "задержки"
       xhr.addEventListener('timeout', () => {
-        this.options.error(`Запрос не успел выполниться за ${xhr.timeout}мс.`);
+        this.options.error(`Запрос не успел выполниться за ${xhr.timeout}мс. Повторите попытку позже`);
       });
 
       // Ошибка соединения
       xhr.addEventListener('error', () =>  {
-        this.options.error(`Произошла ошибка соединения ${xhr.status}.`);
+        this.options.error(`Произошла ошибка соединения ${xhr.status}. Повторите попытку позже`);
       });
     }
 

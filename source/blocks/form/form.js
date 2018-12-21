@@ -174,24 +174,24 @@ const deactivateBookingForm = () => {
 };
 
 /**
- * Функция успешной загрузки
+ * Функция загрузки
  *
  * @param {string} str
  * @param {string} parent
  */
-const showSuccessMessage = (str, parent) => {
+const showMessage = (str, parent) => {
   return function () {
     const parentElement = document.querySelector(parent);
 
     // Шаблон текста
     const template = `
-    <p class="form__success-text">${str}</p>
+    <p class="form__result-text">${str}</p>
   `;
 
     // Вставляем текст в разметку
     parentElement.appendChild(render(template));
 
-    const appendedText = parentElement.querySelector('.form__success-text');
+    const appendedText = parentElement.querySelector('.form__result-text');
 
     // Анимационная функция
     animate({
@@ -202,7 +202,7 @@ const showSuccessMessage = (str, parent) => {
       duration: 2000
     });
 
-    // Удаляем текст об успешной загрузке и возвращаем кнопку
+    // Удаляем текст о загрузке и возвращаем кнопку
     setTimeout(() => {
       parentElement.removeChild(appendedText);
       bookingFormButton.style.display = 'block';
@@ -235,8 +235,9 @@ const bookingFormSubmitHandler = (evt) => {
     method: 'POST',
     url: ServerUrl.MAIL,
     timeout: 7500,
-    success: showSuccessMessage('Письмо отправлено!', '.booking__form'),
-    error: showErrorModal,
+    data: formData,
+    success: showMessage('Письмо отправлено!', '.booking__form'),
+    error:  showMessage('Возникла ошибка! Повторите попытку позже', '.booking__form'),
     load: upload()
   });
 };
