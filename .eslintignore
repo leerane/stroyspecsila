@@ -1,0 +1,4 @@
+/build/**
+/source/libs/
+test.js
+!.eslintrc.js

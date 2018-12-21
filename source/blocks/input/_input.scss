@@ -1,0 +1,74 @@
+.input {
+  width: 100%;
+  padding: 0;
+  position: relative;
+}
+
+.input__label {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease-in-out;
+
+  @include font-par(font-family(default), font-weight(normal), font-size(base-m), normal, color($main-c, secondary), font-lh(root));
+
+  @include fluid-type(font-size(base-m), font-size(base-d));
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-bottom: rem(5);
+  }
+}
+
+.input__label--required {
+  &::after {
+    content: "*";
+    position: absolute;
+    top: 0;
+    right: -12px;
+    color: color($main-c, danger);
+  }
+}
+
+.input__label--focus {
+  top: 0;
+  font-size: font-size(sub);
+  color: color($main-c, primary);
+}
+
+.input__control {
+  width: 100%;
+  padding: rem(10);
+  margin: 0;
+  background-color: transparent;
+  border: 0;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+
+  @include font-par(font-family(default), font-weight(normal), font-size(base-m), normal, color($base-c, white), font-lh(root));
+
+  @include fluid-type(font-size(base-m), font-size(base-d));
+
+  @include box-shadow(0, -2px, 0, 0, color($main-c, secondary), true);
+
+  @include placeholder() {
+    color: rgba(color($main-c, secondary), 0.3);
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.input__control--invalid {
+  @include box-shadow(0, -2px, 0, 0, color($main-c, danger), true);
+}
+
+.input__control:focus,
+.input__control:hover {
+  @include box-shadow(0, -2px, 0, 0, color($main-c, primary), true);
+}
+
+.input__control:focus {
+  @include placeholder() {
+    opacity: 0;
+  }
+}
+

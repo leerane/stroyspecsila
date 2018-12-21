@@ -1,0 +1,104 @@
+.button {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: rem(15, 10);
+  max-width: 270px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: color($base-c, black);
+  border: 0;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow:
+    inset 0 0 0 3px color($base-c, white),
+    inset 0 0 0 0 color($base-c, white),
+    inset 0 0 0 0 color($base-c, white);
+
+
+  @include font-par(font-family(default), font-weight(bold), font-size(base-m), normal, color($main-c, primary), font-lh(root));
+
+  @include fluid-type(font-size(base-m), font-size(base-d));
+
+  &:active {
+    transform: translateY(5px);
+    opacity: 0.7;
+  }
+}
+
+.button:focus,
+.button:hover {
+  color: color($base-c, black);
+  box-shadow:
+    inset 0 0 0 0 color($base-c, white),
+    inset 0 100px 0 0 color($base-c, white),
+    inset 0 -100px 0 0 color($base-c, white);
+}
+
+.button--s--wide {
+  max-width: 320px;
+}
+
+.button--s-full {
+  width: 100%;
+}
+
+.button--primary {
+  position: relative;
+  color: color($base-c, black);
+  background-color: color($main-c, primary);
+  box-shadow: none;
+
+  &:focus,
+  &:hover {
+    color: color($main-c, primary);
+    background-color: color($base-c, black);
+    border: none;
+    box-shadow:
+      inset 0 0 0 3px color($main-c, primary),
+      0 10px 70px 0 rgba(color($main-c, primary), 0.15);
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+
+  &::before {
+    display: none;
+  }
+
+  &::after {
+    @include pseudo-ie11-fix();
+  }
+}
+
+.button--icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.button--icon:focus,
+.button--icon:hover {
+
+  .button__svg {
+    transform: translateX(5px);
+    color: color($main-c, primary);
+    fill: color($main-c, primary);
+  }
+}
+
+.button__svg {
+  display: block;
+  margin: 0 0 0 15px;
+  padding: 0;
+  transition: all 0.3s ease-in-out;
+
+  color: color($base-c, black);
+  fill: color($base-c, black);
+}
+
+

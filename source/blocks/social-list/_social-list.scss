@@ -1,0 +1,15 @@
+.social-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  @include clear-list();
+}
+
+.social-list__item {
+  margin-right: 40px;
+
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
+}

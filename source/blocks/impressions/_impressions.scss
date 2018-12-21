@@ -1,0 +1,281 @@
+.impressions {
+  position: relative;
+  padding-top: 0;
+
+  @media (min-width: breakpoint(tablet)) {
+    padding-top: 0;
+    padding-bottom: 71px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    padding-bottom: 63px;
+  }
+}
+
+.impressions::after {
+  content: "";
+  display: block;
+  height: 7px;
+  margin: 0;
+  padding: 0;
+  background-image: url("../img/svg/zigzag-separator--big.svg");
+  background-repeat: repeat no-repeat;
+  background-size: 319px 100%;
+  transform: rotate(180deg);
+
+  @media (min-width: breakpoint(tablet)) {
+    content: "";
+    position: absolute;
+    bottom: -14px;
+    left: 0;
+    display: block;
+    width: 100%;
+    min-width: 768px;
+    height: 17px;
+    max-height: 23px;
+    margin: 0;
+    padding-top: (23px/1150px)*100%;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 100% 100%;
+    transform: rotate(180deg);
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    bottom: -15px;
+    width: 1052px;
+    height: 23px;
+    margin: 0;
+    padding-top: 0;
+    background-position: 50% 50%;
+    transform: rotate(180deg);
+
+    @include centerer(1052px, null, horizontal);
+  }
+}
+
+.impressions__img-wrapper {
+  @media (min-width: breakpoint(tablet)) {
+    min-height: 457px;
+    background-image: url("../img/review@1x.jpg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 350px 457px;
+  }
+
+  @media (min-width: breakpoint(tablet)) and (min-resolution: 144dpi),
+    (min-width: breakpoint(tablet)) and (min-resolution: 1.5dppx) {
+    background-image: url("../img/review@2x.jpg");
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    max-width: 1150px;
+    min-height: 476px;
+    margin: -28px auto 0 auto;
+    padding: 76px 50px 0 223px;
+    background-position: 50px 7px;
+  }
+}
+
+.impressions__inner {
+  width: auto;
+  margin: -28px auto 0 auto;
+  padding: 0 30px 45px 30px;
+
+
+  @media (min-width: breakpoint(tablet)) {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: auto;
+    padding: 76px 50px 0 50px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    position: relative;
+    width: auto;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+
+/*.impressions__inner::before {
+  @media (min-width: breakpoint(desktop)) {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 50px;
+    width: 350px;
+    height: 457px;
+    padding: 0;
+    z-index: -1;
+    background-image: url("../img/review@1x.jpg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 350px 457px;
+  }
+
+  @media (min-width: breakpoint(desktop)) and (min-resolution: 144dpi),
+    (min-width: breakpoint(desktop)) and (min-resolution: 1.5dppx) {
+    background-image: url("../img/review@2x.jpg");
+  }
+}*/
+
+.impressions__title {
+  margin: 0 0 24px -2px;
+  padding: 0;
+
+  @include font-par(font-family(opensans), font-weight(bold), font-size(h2-m), normal, color($base-c, black), font-lh(base-l));
+
+  @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)) {
+    order: -2;
+    margin-top: 1px;
+    margin-bottom: 49px;
+    margin-left: -5px;
+    font-size: font-size(h2-t);
+    line-height: font-lh(title-md);
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    order: -2;
+    margin-top: 1px;
+    margin-bottom: 49px;
+    font-size: font-size(h2-d);
+    line-height: font-lh(title-l);
+  }
+}
+
+.impressions__blockquote {
+
+  margin-bottom: 29px;
+  @include clear-list();
+
+  @include font-par(font-family(opensans), font-weight(regular), font-size(base-m), normal, color($base-c, black), 30px);
+
+  @media (min-width: breakpoint(tablet)) {
+    flex-basis: 100%;
+    font-size: font-size(base-t);
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    flex-basis: 90%;
+    margin-left: 2px;
+  }
+}
+
+.impressions__break {
+  display: none;
+
+  @media (min-width: breakpoint(desktop)) {
+    display: block;
+  }
+}
+
+.impressions__footer {
+  margin-top: 27px;
+
+  @media (min-width: breakpoint(tablet)) {
+    margin-top: 57px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-top: 39px;
+  }
+}
+
+.impressions__author {
+  @include clear-list();
+}
+
+.impressions__author-name {
+  display: block;
+  margin-bottom: 3px;
+  letter-spacing: 0.1px;
+  @include font-par(font-family(opensans), font-weight(bold), font-size(base-t), normal, color($base-c, black), font-lh(base-md));
+
+  @media (min-width: breakpoint(tablet)) and (max-width: breakpoint(tablet-top)) {
+    margin-bottom: 4px;
+    font-size: font-size(other);
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    font-size: font-size(base-t);
+  }
+}
+
+.impressions__author-contact {
+  display: block;
+
+  @include font-par(font-family(opensans), font-weight(regular), font-size(base-t), normal, color($main-c, secondary), font-lh(base-l));
+
+  @media (min-width: breakpoint(tablet)) {
+    margin-left: -2px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-left: 0;
+  }
+}
+
+.impressions__buttons-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 38px;
+
+  @include box-shadow(0, 0, 0, 1px, color($grey-c, dark), true);
+
+  @media (min-width: breakpoint(tablet)) {
+    position: absolute;
+    right: 69px;
+    bottom: -6px;
+    width: 137px;
+    box-shadow: none;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    right: 19px;
+  }
+}
+
+.impressions__buttons-wrapper::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 50px;
+  background-color: color($grey-c, dark);
+
+  @media (min-width: breakpoint(tablet)) {
+    width: 0;
+    height: 0;
+  }
+}
+
+.impressions__button-wrapper {
+  @media (min-width: breakpoint(tablet)) {
+    order: -1;
+    width: 175px;
+    margin-left: auto;
+    padding-top: 3px;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    order: -1;
+    width: 175px;
+    margin-left: auto;
+    padding-top: 10px;
+  }
+}
+
+.impressions__button {
+  @media (min-width: breakpoint(tablet)) {
+    padding-top: 17px;
+    padding-bottom: 15px;
+  }
+}

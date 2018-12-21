@@ -1,0 +1,16 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "jquery": true
+  },
+  "extends": "htmlacademy/node",
+  "rules": {
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }]
+  }
+}

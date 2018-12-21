@@ -1,0 +1,11 @@
+.main-map {
+  position: relative;
+  width: 100%;
+  min-height: 457px;
+  max-height: 457px;
+  overflow: hidden;
+
+  @media (min-width: breakpoint(desktop)) {
+    width: 525px;
+  }
+}
