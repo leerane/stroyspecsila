@@ -1,13 +1,13 @@
 <p align="center">
-  <a href="http://kingslounge.ru">
-    <img src="http://kingslounge.ru/img/logo.svg" width="148.03" height="198.34">
+  <a href="http://stroyspecsila.ru">
+    <img src="https://stroyspecsila.ru/img/logo.jpg" width="237.88" height="237.88">
   </a>
 </p>
 
-# King's Lounge
+# СтройСпецСила
 [![License: MIT][mit-image]][mit-url] [![Dependency status][dependency-image]][dependency-url]
 
-This is a repository of hookah lounge's website.
+This is a repository of construction company's website.
 
 # License 
 This project is released under the [MIT License][mit-license].
