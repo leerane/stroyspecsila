@@ -1,11 +1,11 @@
 .main-map {
-  position: relative;
+  position: absolute;
   width: 100%;
   min-height: 457px;
-  max-height: 457px;
+  max-height: 100vh;
   overflow: hidden;
 
-  @media (min-width: breakpoint(desktop)) {
-    width: 525px;
+  @media (min-width: breakpoint(tablet)) {
+    height: 100vh;
   }
 }

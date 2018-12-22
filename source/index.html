@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- <meta name="description" content="Кальянная King's Lounge">
-    <meta name="keywords" content="кальянная, кальян, hookah, king, lounge"> -->
+    <meta name="description" content="Строительная компания СтройСпецСила">
+    <meta name="keywords" content="строительная, компания, стройспецсила, construction, company">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кальянная King's Lounge</title>
+    <title>Строительная компания "СтройСпецСила"</title>
 
     <!--- Preloading fonts and other stuff -->
-    <link rel="preload" href="fonts/mullerregular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/mullermedium.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/mullerbold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/montserratregular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/montserratmedium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/montserratbold.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.min.css">
@@ -34,11 +34,10 @@
       <div class="main-header__inner">
 
         <!-- Главный логотип сайта -->
-        <a class="main-logo main-header__logo main-page__main-logo" aria-label="Логотип King's Lounge">
+        <a class="main-logo main-header__logo main-page__main-logo" aria-label="Логотип СтройСпецСила">
           <picture>
-            <source media="(min-width: 1150px)" srcset="img/svg/logo--main.svg">
             <source media="(min-width: 768px)" srcset="img/svg/logo--tablet.svg">
-            <img src="img/svg/logo--mobile.svg" alt="Логотип King's Lounge" class="main-logo__svg">
+            <img src="img/svg/logo--mobile.svg" alt="Логотип СтройСпецСила" class="main-logo__svg">
           </picture>
         </a>
 
@@ -52,40 +51,25 @@
           <div class="main-navigation__inner">
             <ul class="main-navigation__list">
               <li class="main-navigation__item">
-                <a class="main-navigation__link main-page__link main-navigation__link--icon">
-                  <svg aria-label="Home" width="21" height="21" class="main-navigation__svg main-header__svg--home">
-                    <use xlink:href="img/svg/sprite.svg#home-icon"/>
-                  </svg>Главная</a>
+                <a class="main-navigation__link main-page__link main-navigation__link--icon">Главная</a>
               </li>
               <li class="main-navigation__item">
-                <a href="#advantages" class="main-navigation__link main-navigation__link--icon">
-                  <svg aria-label="Menu" width="21" height="21" class="main-navigation__svg main-header__svg--home">
-                    <use xlink:href="img/svg/sprite.svg#advantages-icon"/>
-                  </svg>Преимущества</a>
+                <a href="#advantages" class="main-navigation__link">О компании</a>
               </li>
               <li class="main-navigation__item">
-                <a href="#menu" class="main-navigation__link main-navigation__link--icon">
-                  <svg aria-label="Menu" width="21" height="21" class="main-navigation__svg main-header__svg--home">
-                    <use xlink:href="img/svg/sprite.svg#menu-icon"/>
-                  </svg>Меню</a>
+                <a href="#menu" class="main-navigation__link">Объекты</a>
               </li>
               <li class="main-navigation__item">
-                <a href="#gallery" class="main-navigation__link main-navigation__link--icon">
-                  <svg aria-label="Gallery" width="21" height="21" class="main-navigation__svg main-header__svg--home">
-                    <use xlink:href="img/svg/sprite.svg#gallery-icon"/>
-                  </svg>Галерея</a>
+                <a href="#gallery" class="main-navigation__link main-navigation__link--icon">Галерея</a>
               </li>
               <li class="main-navigation__item">
-                <a href="#contact" class="main-navigation__link main-navigation__link--icon">
-                  <svg aria-label="Contact" width="21" height="21" class="main-navigation__svg main-header__svg--home">
-                    <use xlink:href="img/svg/sprite.svg#contact-icon"/>
-                  </svg>Контакты</a>
+                <a href="#contact" class="main-navigation__link">Обратная связь</a>
               </li>
               <li class="main-navigation__item">
-                <a href="tel:+79585553355" class="main-navigation__link main-navigation__link--icon">
-                  <svg aria-label="Phone" width="21" height="21" class="main-navigation__svg">
-                    <use xlink:href="img/svg/sprite.svg#call-icon"/>
-                  </svg>+7 (958) 555-33-55</a>
+                <a href="#contact" class="main-navigation__link">Новости</a>
+              </li>
+              <li class="main-navigation__item">
+                <a href="#contact" class="main-navigation__link">Контакты</a>
               </li>
             </ul>
           </div>
@@ -97,18 +81,20 @@
     <main class="main-content">
 
       <!-- Промо -->
-      <section class="promo-things" aria-labelledby="promoTitle" aria-describedby="promoInfo">
-        <div class="promo-things__inner">
-          <h2 class="promo-things__subtitle">Кальянная</h2>
-          <h1 class="promo-things__title" id="promoTitle">King's Lounge</h1>
-          <div class="promo-things__order-buttons" id="promoInfo">
-            <a href="#contact" onclick="" class="button button--primary button--icon button--s--wide promo-things__button">Новоясеневский пр.
-              <svg aria-label="Placeholder" width="21" height="21" class="button__svg">
-                <use xlink:href="img/svg/sprite.svg#placeholder-icon"/>
-              </svg>
-            </a>
-            <a href="#booking" class="button button--primary button--s--wide promo-things__button">Забронировать</a>
-          </div>
+      <section class="promo" aria-labelledby="promoTitle" aria-describedby="promoInfo">
+        <div class="promo__inner">
+          <article class="promo-card">
+            <h2 class="promo-card__title">100 тыс. кв. метров</h2>
+            <h3 class="promo-card__subtitle">Введено в эксплуатацию</h3>
+          </article>
+          <article class="promo-card visually-hidden">
+            <h2 class="promo-card__title">Rozarossa</h2>
+            <h3 class="promo-card__subtitle">Премиальный комплекс апартаментов в Хамовниках</h3>
+          </article>
+          <article class="promo-card visually-hidden">
+            <h2 class="promo-card__title">СтройСпецСила - в ТОП-10 самых быстрорастущих компаний</h2>
+            <h3 class="promo-card__subtitle">по версии Интерфакс</h3>
+          </article>
         </div>
       </section>
 
@@ -192,27 +178,31 @@
         </div>
       </section>
 
-      <!-- Бронирование -->
-      <section class="booking" id="booking" aria-labelledby="bookingTitle" aria-describedby="bookingInfo">
-        <div class="booking__inner">
-          <h2 class="booking__title" id="bookingTitle">Бронирование</h2>
-          <form action="http://kingslounge.ru/mail.php" method="post" enctype="multipart/form-data" autocomplete="off" id="bookingInfo" class="form booking__form">
+      <!-- Обратная связь -->
+      <section class="feedback" id="feedback" aria-labelledby="feedbackTitle" aria-describedby="feedbackInfo">
+        <div class="feedback__inner">
+          <h2 class="feedback__title" id="feedbackTitle">Обратная связь</h2>
+          <form action="/mail.php" method="post" enctype="multipart/form-data" autocomplete="off" id="feedbackInfo" class="form feedback__form">
            <div class="form__inner">
              <div class="form__fields-wrapper">
                <div class="input form__block">
-                 <label for="initials-field" class="input__label input__label--required">ФИО:</label>
-                 <input type="text" class="input__control" name="initials" id="initials-field" placeholder="Джон Доу" minlength="5" maxlength="50" required>
+                 <label for="subject-field" class="input__label input__label--required">Тема письма</label>
+                 <input type="text" class="input__control" name="subject" id="subject-field" placeholder="Строительство поселка" minlength="5" maxlength="50" required>
                </div>
                <div class="input form__block">
-                 <label for="phone-field" class="input__label input__label--required">Телефон:</label>
+                 <label for="initials-field" class="input__label input__label--required">ФИО</label>
+                 <input type="text" class="input__control" name="initials" id="initials-field" placeholder="Иванов Иван Иванович" minlength="5" maxlength="50" required>
+               </div>
+               <div class="input form__block">
+                 <label for="mail-field" class="input__label input__label--required">E-mail</label>
+                 <input type="email" class="input__control" name="mail" id="mail-field" placeholder="ivanov@example.com" required>
+               </div>
+               <div class="input form__block">
+                 <label for="phone-field" class="input__label input__label--required">Телефон</label>
                  <input type="tel" class="input__control" name="phone" id="phone-field" placeholder="+7XXXXXXXXXX"required>
                </div>
-               <div class="input form__block">
-                 <label for="mail-field" class="input__label input__label--required">E-mail:</label>
-                 <input type="email" class="input__control" name="mail" id="mail-field" placeholder="johndoe@example.com" required>
-               </div>
                <div class="textarea form__block">
-                 <label for="comments-field" class="input__label textarea__label">Комментарий:</label>
+                 <label for="comments-field" class="input__label textarea__label">Текст обращения</label>
                  <textarea class="textarea__control" name="comments" id="comments-field" placeholder="Дополнительная информация"></textarea>
                </div>
              </div>
@@ -226,20 +216,20 @@
       <section class="contact" id="contact" aria-labelledby="contactTitle" aria-describedby="contactInfo">
         <div class="contact__inner">
           <div class="contact__info" id="contactInfo">
-            <h2 class="contact__title" id="contactTitle">Где нас найти?</h2>
+            <h2 class="contact__title" id="contactTitle">Контакты</h2>
             <ul class="contact__list">
               <li class="contact__item">
-                <a href="tel:+79585553355" class="contact__link">+7 (958) 555-33-55</a>
+                <a href="tel:+79585553355" class="contact__link">+7 (495) 733-57-31</a>
               </li>
               <li class="contact__item">
-                <a href="mailto:booking@kingslounge.ru" class="contact__link">booking@kingslounge.ru</a>
+                <a href="mailto:booking@kingslounge.ru" class="contact__link">info@stroyspecsila.ru</a>
               </li>
               <li class="contact__item">Новоясеневский проспект, 1Б стр. 4</li>
               <li class="contact__item">340 метров от м. Теплый стан</li>
             </ul>
           </div>
-          <div class="main-map" id="main-map" role="presentation" aria-hidden="true"></div>
         </div>
+        <div class="main-map" id="main-map" role="presentation" aria-hidden="true"></div>
       </section>
     </main>
 

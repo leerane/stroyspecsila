@@ -19,7 +19,7 @@ function init() {
   });
 
   kingsPlacemark = new ymaps.Placemark(coords, {
-    hintContent: `King's Lounge`,
+    hintContent: `СтройСпецСила`,
   }, {
     // Своё изображение иконки метки.
     iconLayout: 'default#image',

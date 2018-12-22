@@ -2,7 +2,6 @@ import Xhr from '../../js/modules/backend';
 import {render} from '../../js/modules/utils';
 import animate from '../../js/modules/animate';
 import {nth} from '../../js/modules/animations';
-import {showErrorModal} from '../modal/modal';
 import {loader} from '../loader/loader';
 
 /**
@@ -12,14 +11,16 @@ import {loader} from '../loader/loader';
 // Константы
 const INVALID_FIELD_CLASS = 'input__control--invalid';
 const ServerUrl = {
-  MAIL: `http://kingslounge.ru/mail.php`
+  MAIL: `/mail.php`
 };
 
 // Переменные, связанные с формами
-const bookingForm = document.querySelector('.booking__form');
-const bookingFormInitials = bookingForm.querySelector('#initials-field');
-const bookingFormPhone = bookingForm.querySelector('#phone-field');
-const bookingFormButton = bookingForm.querySelector('.form__button');
+const FORM_SELECTOR = '.feedback__form';
+const feedbackForm = document.querySelector(FORM_SELECTOR);
+const feedbackFormSubject = feedbackForm.querySelector('#subject-field');
+const feedbackFormInitials = feedbackForm.querySelector('#initials-field');
+const feedbackFormPhone = feedbackForm.querySelector('#phone-field');
+const feedbackFormButton = feedbackForm.querySelector('.form__button');
 
 /**
  * Функция, проверяющая
@@ -46,6 +47,15 @@ const checkLength = (evt) => {
  * @param {Event} evt
  */
 const initialsInputHandler = (evt) => {
+  checkLength(evt);
+};
+
+/**
+ * Функция-обработчик валидации темы письма
+ *
+ * @param {Event} evt
+ */
+const subjectInputHandler = (evt) => {
   checkLength(evt);
 };
 
@@ -113,12 +123,14 @@ const formInvalidHandler = (evt) => {
  * на элементы формы объявления
  */
 const addEventListeners = () => {
+  // Валидация темы письма
+  feedbackFormSubject.addEventListener('input', subjectInputHandler);
   // Валидация ФИО
-  bookingFormInitials.addEventListener('input', initialsInputHandler);
+  feedbackFormInitials.addEventListener('input', initialsInputHandler);
   // Валидация телефона
-  bookingFormPhone.addEventListener('input', phoneInputHandler);
+  feedbackFormPhone.addEventListener('input', phoneInputHandler);
   // Валидация полей (добавление и удаление красной рамки)
-  bookingForm.addEventListener('invalid', formInvalidHandler, true);
+  feedbackForm.addEventListener('invalid', formInvalidHandler, true);
 };
 
 /**
@@ -126,12 +138,14 @@ const addEventListeners = () => {
  * с элементов формы объявления
  */
 const removeEventListeners = () => {
+  // Валидация темы письма
+  feedbackFormSubject.removeEventListener('input', subjectInputHandler);
   // Валидация ФИО
-  bookingFormInitials.removeEventListener('input', initialsInputHandler);
+  feedbackFormInitials.removeEventListener('input', initialsInputHandler);
   // Валидация телефона
-  bookingFormPhone.removeEventListener('input', phoneInputHandler);
+  feedbackFormPhone.removeEventListener('input', phoneInputHandler);
   // Валидация полей (добавление и удаление красной рамки)
-  bookingForm.removeEventListener('invalid', formInvalidHandler, true);
+  feedbackForm.removeEventListener('invalid', formInvalidHandler, true);
 };
 
 /**
@@ -150,17 +164,17 @@ const deleteHighlight = (element, invalidClass) => {
 /**
  * Функция очистки формы
  */
-const resetBookingForm = () => {
+const resetFeedbackForm = () => {
   // Ресет формы
-  bookingForm.reset();
+  feedbackForm.reset();
   // Удаляем красные рамки
-  deleteHighlight(bookingForm, INVALID_FIELD_CLASS);
+  deleteHighlight(feedbackForm, INVALID_FIELD_CLASS);
 };
 
 /**
  * Функция активации формы объявления
  */
-const activateBookingForm = () => {
+const activateFeedbackForm = () => {
   // Добавление всех обработчиков
   addEventListeners();
 };
@@ -168,7 +182,7 @@ const activateBookingForm = () => {
 /**
  * Функция активации формы объявления
  */
-const deactivateBookingForm = () => {
+const deactivateFeedbackForm = () => {
   // Очистка формы
   resetBookingForm();
 };
@@ -193,6 +207,8 @@ const showMessage = (str, parent) => {
 
     const appendedText = parentElement.querySelector('.form__result-text');
 
+    resetFeedbackForm();
+
     // Анимационная функция
     animate({
       draw: function (progress) {
@@ -205,7 +221,7 @@ const showMessage = (str, parent) => {
     // Удаляем текст о загрузке и возвращаем кнопку
     setTimeout(() => {
       parentElement.removeChild(appendedText);
-      bookingFormButton.style.display = 'block';
+      feedbackFormButton.style.display = 'block';
     }, 2000);
   }
 };
@@ -216,8 +232,8 @@ const showMessage = (str, parent) => {
 const upload = () => {
 
   // Скрываем кнопку и добавляем лоадер (три точки)
-  bookingFormButton.style.display = 'none';
-  return loader('.booking__form');
+  feedbackFormButton.style.display = 'none';
+  return loader(FORM_SELECTOR);
 };
 
 /**
@@ -226,9 +242,9 @@ const upload = () => {
  *
  * @param {Event} evt
  */
-const bookingFormSubmitHandler = (evt) => {
+const feedbackFormSubmitHandler = (evt) => {
   evt.preventDefault();
-  const formData = new FormData(bookingForm);
+  const formData = new FormData(feedbackForm);
 
   // Создаем запрос к серверу
   const bookingData = new Xhr({
@@ -236,13 +252,13 @@ const bookingFormSubmitHandler = (evt) => {
     url: ServerUrl.MAIL,
     timeout: 7500,
     data: formData,
-    success: showMessage('Письмо отправлено!', '.booking__form'),
-    error:  showMessage('Возникла ошибка! Повторите попытку позже', '.booking__form'),
+    success: showMessage('Письмо отправлено!', FORM_SELECTOR),
+    error:  showMessage('Возникла ошибка! Повторите попытку позже', FORM_SELECTOR),
     load: upload()
   });
 };
 
 // Активация формы и отправка
-activateBookingForm();
+activateFeedbackForm();
 
-bookingForm.addEventListener('submit', bookingFormSubmitHandler);
+feedbackForm.addEventListener('submit', feedbackFormSubmitHandler);
