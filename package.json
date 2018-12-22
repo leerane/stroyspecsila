@@ -1,17 +1,17 @@
 {
-  "name": "kingslounge",
+  "name": "stroyspecsila",
   "version": "1.0.0",
-  "description": "Hookah lounge",
+  "description": "СтройСпецСила",
   "author": "Nikolay Moryakin <leeranez@gmail.com> (https://github/leerane)",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/leerane/kingslounge"
+    "url": "https://github.com/leerane/stroyspecsila"
   },
   "bugs": {
-    "url": "https://github.com/leerane/kingslounge/issues"
+    "url": "https://github.com/leerane/stroyspecsila/issues"
   },
-  "homepage": "https://github.com/leerane/kingslounge#readme",
+  "homepage": "https://github.com/leerane/stroyspecsila#readme",
   "devDependencies": {
     "@babel/cli": "^7.2.0",
     "@babel/core": "^7.2.0",
@@ -105,7 +105,8 @@
     "zip": "cross-env NODE_ENV=production gulp zip",
     "gzip": "cross-env NODE_ENV=production gulp gzip",
     "deploy": "cross-env NODE_ENV=production npm run build && gh-pages -d build && gulp build:clean",
-    "wepback": "wepback -p"
+    "wepback": "wepback -p",
+    "gh-pages": "gh-pages -d build"
   },
   "browserslist": [
     "last 2 versions",
