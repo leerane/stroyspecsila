@@ -1,0 +1,68 @@
+.latest-news {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background-color: color($main-c, background);
+}
+
+.latest-news__inner {
+  padding: rem(35, 30);
+  margin: 0 auto;
+
+  @media (min-width: breakpoint(tablet)) {
+    padding: rem(50, 50);
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    padding: rem(70, 50);
+    max-width: 1150px;
+  }
+}
+
+.latest-news__title {
+  margin: 0 0 0.7em 0;
+  padding: 0;
+
+  white-space: pre-line;
+
+  @include font-par(font-family(default), font-weight(bold), font-size(h2-m), normal, color($base-c, white), font-lh(root));
+
+  @include fluid-type(font-size(h2-m), font-size(h2-d));
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-bottom: rem(50);
+  }
+}
+
+.latest-news__list {
+  @include clear-list();
+
+  width: 100%;
+  display: flex;
+  flex-shrink: 0;
+  flex-basis: auto;
+  flex-direction: column;
+  background-color: transparent;
+  align-items: center;
+  margin: 0 -15px 0 -15px;
+
+  @media (min-width: breakpoint(tablet)) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    flex-direction: row;
+  }
+}
+
+.latest-news__item {
+  padding: 0;
+  margin: 0 15px;
+  width: 100%;
+  transition: 0.3s ease-in-out;
+
+  @media (min-width: breakpoint(tablet)) {
+    width: 45%
+  }
+}

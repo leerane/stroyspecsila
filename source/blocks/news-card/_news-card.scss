@@ -1,0 +1,111 @@
+.news-card {
+  margin: 0;
+  padding: 0;
+  height: auto;
+}
+
+.news-card__inner {
+  position: relative;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: color($main-c, header);
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  box-shadow:
+    0 0 0 1px color($main-c, primary);
+  overflow: hidden;
+
+  @include font-par(font-family(default), font-weight(normal), font-size(base-m), normal, color($base-c, white), font-lh(root));
+
+  @include fluid-type(font-size(base-m), font-size(base-d));
+}
+
+.news-card__inner:focus,
+.news-card__inner:hover {
+  box-shadow: 0 0 40px 14px rgba(color($main-c, primary), 0.5);
+}
+
+.news-card__title {
+  margin: 0 0 rem(20) 0;
+  padding: 0;
+  transition: all 0.3s ease-in-out;
+  white-space: pre-line;
+
+  @include font-par(font-family(default), font-weight(bold), font-size(h3-m), normal, color($base-c, white), font-lh(root));
+
+  @include fluid-type(font-size(h3-m), font-size(h3-t));
+
+  @media (min-width: breakpoint(tablet)) {
+    margin-bottom: rem(30);
+  }
+}
+
+.news-card__description {
+  padding: 0;
+  margin: 0 0 rem(20);
+  transition: all 0.3s ease-in-out;
+
+  @include font-par(font-family(default), font-weight(normal), font-size(root), normal, color($base-c, white), font-lh(root));
+
+  @include fluid-type(font-size(root), font-size(root));
+
+  @media (min-width: breakpoint(tablet)) {
+    margin: 0 0 rem(30);
+  }
+}
+
+.news-card__date {
+  padding: rem(5, 15);
+  margin: 0;
+  transition: all 0.3s ease-in-out;
+  background-color: color($main-c, primary);
+  border-radius: 50px;
+
+  @include font-par(font-family(default), font-weight(bold), font-size(root), normal, color($base-c, black), font-lh(root));
+
+  @include fluid-type(font-size(root), font-size(root));
+}
+
+
+.news-card__image {
+  width: auto;
+  height: 100%;
+  max-width: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 3px;
+  opacity: 0.1;
+}
+
+.news-card__info {
+  margin: 0;
+  padding: rem(20, 15);
+
+  @media (min-width: breakpoint(tablet)) {
+    padding: rem(20, 30);
+  }
+
+  @media (min-width: breakpoint(tablet)) {
+    padding: rem(30, 30);
+  }
+}
+
+.news-card__image-wrapper {
+  display: block;
+  position: relative;
+  padding: 0 0 65% 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+.news-card__image {
+  display: block;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}

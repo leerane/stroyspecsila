@@ -33,3 +33,11 @@
   right: 15px;
   bottom: 15px;
 }
+
+.main-page__main-header {
+  z-index: z-index(logo);
+
+  @media (min-width: breakpoint(tablet)) {
+    position: fixed;
+  }
+}

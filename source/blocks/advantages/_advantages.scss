@@ -2,10 +2,7 @@
   position: relative;
   margin: 0;
   padding: 0;
-  background-color: color($main-c, background);
-  background-image: url("../img/svg/note-pattern.svg");
-  background-repeat: repeat;
-  background-size: 100px;
+  background-color: color($main-c, header);
 }
 
 .advantages__inner {

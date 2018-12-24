@@ -80,12 +80,12 @@ $base-c: (
   svg: #231f20
 );
 
-$primary-color: #d8ab4e !default;
+$primary-color: #bf890e !default;
 $secondary-color: map-get($base-c, white) !default;
-$header-color: #020202;
+$header-color: #08090a;
 $background-color: #15181d !default;
 $pattern-color: #111317 !default;
-$accent-color: #b48c36 !default;
+$accent-color: #e8a82b  !default;
 $success-color: #39b54a !default;
 $warning-color: #f9c301 !default;
 $danger-color: #f43f3b !default;
@@ -165,9 +165,11 @@ $font-size--small: 18px !default;
 $font-size--smaller: 17px !default;
 $font-size--smallest: 16px !default;
 $font-size--sub: 14px !default;
+$font-size--extra-small: 10px !default;
 $font-size--root: 15px !default;
 
 $font-sizes: (
+  extra-small: $font-size--extra-small,
   root: $font-size--root,
   sub: $font-size--sub,
   base-m: $font-size--smallest,
@@ -197,6 +199,6 @@ $font-line-height: (
 );
 
 $font-stack: (
-  default: ("Muller", arial, sans-serif),
+  default: ("Montserrat", arial, sans-serif),
   roboto: ("Roboto", arial, sans-serif)
 );

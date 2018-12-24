@@ -84,6 +84,7 @@
     "stylelint-config-htmlacademy": "0.1.x",
     "stylelint-scss": "^3.4.0",
     "svg4everybody": "^2.1.9",
+    "swiper": "^4.4.6",
     "uglify-es": "^3.3.9",
     "uglifyjs-webpack-plugin": "^2.0.1",
     "webpack-cli": "^3.1.2",

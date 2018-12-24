@@ -9,9 +9,8 @@
     <title>Строительная компания "СтройСпецСила"</title>
 
     <!--- Preloading fonts and other stuff -->
-    <link rel="preload" href="fonts/montserratregular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/montserratmedium.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/montserratbold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/centurygothic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/centurygothicbold.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.min.css">
@@ -30,13 +29,13 @@
   <body class="main-page">
 
     <!-- Шапка сайта -->
-    <header class="main-header js-main-header">
+    <header class="main-header main-page__main-header js-main-header">
       <div class="main-header__inner">
 
         <!-- Главный логотип сайта -->
         <a class="main-logo main-header__logo main-page__main-logo" aria-label="Логотип СтройСпецСила">
           <picture>
-            <source media="(min-width: 768px)" srcset="img/svg/logo--tablet.svg">
+            <source media="(min-width: 768px)" srcset="img/svg/logo--mobile.svg">
             <img src="img/svg/logo--mobile.svg" alt="Логотип СтройСпецСила" class="main-logo__svg">
           </picture>
         </a>
@@ -84,97 +83,101 @@
       <section class="promo" aria-labelledby="promoTitle" aria-describedby="promoInfo">
         <div class="promo__inner">
           <article class="promo-card">
-            <h2 class="promo-card__title">100 тыс. кв. метров</h2>
-            <h3 class="promo-card__subtitle">Введено в эксплуатацию</h3>
+            <div class="promo-card__inner">
+              <picture>
+                <source type="image/webp" srcset="img/1@1x.webp 1x, img/1@2x.webp 2x">
+                <img src="img/1@1x.jpg" srcset="img/1@2x.jpg 2x" alt="100 тыс. кв. метров введено в эксплуатацию" class="promo-card__image">
+              </picture>
+              <div class="promo-card__info">
+                <h2 class="promo-card__title">100 тыс. кв. метров</h2>
+                <h3 class="promo-card__subtitle">Введено в эксплуатацию</h3>
+              </div>
+            </div>
           </article>
           <article class="promo-card visually-hidden">
-            <h2 class="promo-card__title">Rozarossa</h2>
-            <h3 class="promo-card__subtitle">Премиальный комплекс апартаментов в Хамовниках</h3>
+            <div class="promo-card__inner">
+              <picture>
+                <source type="image/webp" srcset="img/2@1x.webp 1x, img/2@2x.webp 2x">
+                <img src="img/2@1x.jpg" srcset="img/2@2x.jpg 2x" alt="Rozarossa" class="promo-card__image">
+              </picture>
+              <div class="promo-card__info">
+                <h2 class="promo-card__title">Rozarossa</h2>
+                <h3 class="promo-card__subtitle">Премиальный комплекс апартаментов в Хамовниках</h3>
+              </div>
+            </div>
           </article>
           <article class="promo-card visually-hidden">
-            <h2 class="promo-card__title">СтройСпецСила - в ТОП-10 самых быстрорастущих компаний</h2>
-            <h3 class="promo-card__subtitle">по версии Интерфакс</h3>
+            <div class="promo-card__inner">
+              <picture>
+                <source type="image/webp" srcset="img/3@1x.webp 1x, img/3@2x.webp 2x">
+                <img src="img/3@1x.jpg" srcset="img/3@2x.jpg 2x" alt="СтройСпецСила в ТОП-10" class="promo-card__image">
+              </picture>
+              <div class="promo-card__info">
+                <h2 class="promo-card__title">СтройСпецСила - в ТОП-10 самых быстрорастущих компаний</h2>
+                <h3 class="promo-card__subtitle">по версии Интерфакс</h3>
+              </div>
+            </div>
           </article>
         </div>
       </section>
 
-      <!-- Услуги -->
-      <section class="advantages" id="advantages" aria-labelledby="advantagesTitle" aria-describedby="advantagesInfo">
-        <div class="advantages__inner">
-          <h2 class="advantages__title" id="advantagesTitle">Почему мы?</h2>
-          <ul class="advantages__list" id="advantagesInfo">
-            <li class="advantages__item">
-              <svg aria-label="Service" width="80" height="80" class="advantages__svg">
-                <use xlink:href="img/svg/sprite.svg#service-icon"/>
-              </svg>
-              <h3 class="advantages__header">Обслуживание</h3>
-              <p class="advantages__description">Приедем на ваше мероприятие с нашими кальянами!</p>
-            </li>
-            <li class="advantages__item">
-              <svg aria-label="Food" width="80" height="80" class="advantages__svg">
-                <use xlink:href="img/svg/sprite.svg#food-icon"/>
-              </svg>
-              <h3 class="advantages__header">Кухня</h3>
-              <p class="advantages__description">Европейская, кавказская и японская кухни</p>
-            </li>
-            <li class="advantages__item">
-              <svg aria-label="VIP" width="80" height="80" class="advantages__svg">
-                <use xlink:href="img/svg/sprite.svg#vip-icon"/>
-              </svg>
-              <h3 class="advantages__header">VIP комната</h3>
-              <p class="advantages__description">Уютная закрытая комната для хорошей компании</p>
-            </li>
-            <li class="advantages__item">
-              <svg aria-label="Games" width="80" height="80" class="advantages__svg">
-                <use xlink:href="img/svg/sprite.svg#games-icon"/>
-              </svg>
-              <h3 class="advantages__header">Развлечения</h3>
-              <p class="advantages__description">Sony PlayStation 4, настольные игры, просмотр трансляций</p>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- Меню -->
-      <section class="menu" id="menu" aria-labelledby="menuTitle" aria-describedby="menuInfo">
-        <div class="menu__inner">
-          <h2 class="menu__title" id="menuTitle">Меню</h2>
-          <ul class="menu__list" id="menuInfo">
-            <li class="menu__item">
-              <article class="menu-card">
-                <div class="menu-card__inner">
-                  <h3 class="menu-card__title">Кухня</h3>
-                  <picture>
-                    <source type="image/webp" srcset="img/japanese-cuisine@1x.webp 1x, img/japanese-cuisine@2x.webp 2x">
-                    <img src="img/japanese-cuisine@1x.jpg" srcset="img/japanese-cuisine@2x.jpg 2x" alt="Японская кухня" class="menu-card__image">
-                  </picture>
-                  <a href="/assets/japanese-cuisine.pdf" target="_blank" class="button button--primary menu-card__button">Открыть</a>
+      <!-- Последние новости -->
+      <section class="latest-news" id="latest-news" aria-labelledby="latestNewsTitle" aria-describedby="latestNewsInfo">
+        <div class="latest-news__inner">
+          <h2 class="latest-news__title" id="latestNewsTitle">Последние новости</h2>
+          <ul class="latest-news__list" id="latestNewsInfo">
+            <li class="latest-news__item">
+              <article class="news-card">
+                <div class="news-card__inner">
+                  <a href="#" class="news-card__image-wrapper">
+                    <picture>
+                      <source type="image/webp" srcset="img/3@1x.webp 1x, img/3@2x.webp 2x">
+                      <img src="img/3@1x.jpg" srcset="img/3@2x.jpg 2x" alt="СтройСпецСила в ТОП-10" class="news-card__image">
+                    </picture>
+                  </a>
+                  <div class="news-card__info">
+                    <h3 class="news-card__title">Мы - в ТОП-10!</h3>
+                    <p class="news-card__description">Компания "СтройСпецСила" оказалась в ТОП-10 быстрорастущих компаний по версии Интерфакс</p>
+                    <time class="news-card__date">21 июня 2018</time>
+                  </div>
                 </div>
               </article>
             </li>
-            <li class="menu__item">
-              <article class="menu-card">
-                <div class="menu-card__inner">
-                  <h3 class="menu-card__title">Напитки</h3>
-                  <picture>
-                    <source type="image/webp" srcset="img/drink-menu@1x.webp 1x, img/drink-menu@2x.webp 2x">
-                    <img src="img/drink-menu@1x.jpg" srcset="img/drink-menu@2x.jpg 2x" alt="Напитки" class="menu-card__image">
-                  </picture>
-                  <a href="/assets/drink-menu.pdf" target="_blank" class="button button--primary menu-card__button">Открыть</a>
+            <li class="latest-news__item">
+              <article class="news-card">
+                <div class="news-card__inner">
+                  <a href="#" class="news-card__image-wrapper">
+                    <picture>
+                      <source type="image/webp" srcset="img/3@1x.webp 1x, img/3@2x.webp 2x">
+                      <img src="img/3@1x.jpg" srcset="img/3@2x.jpg 2x" alt="СтройСпецСила в ТОП-10" class="news-card__image">
+                    </picture>
+                  </a>
+                  <div class="news-card__info">
+                    <h3 class="news-card__title">Мы - в ТОП-10!</h3>
+                    <p class="news-card__description">Компания "СтройСпецСила" оказалась в ТОП-10 быстрорастущих компаний по версии Интерфакс</p>
+                    <time class="news-card__date">21 июня 2018</time>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class="latest-news__item">
+              <article class="news-card">
+                <div class="news-card__inner">
+                  <a href="#" class="news-card__image-wrapper">
+                    <picture>
+                      <source type="image/webp" srcset="img/3@1x.webp 1x, img/3@2x.webp 2x">
+                      <img src="img/3@1x.jpg" srcset="img/3@2x.jpg 2x" alt="СтройСпецСила в ТОП-10" class="news-card__image">
+                    </picture>
+                  </a>
+                  <div class="news-card__info">
+                    <h3 class="news-card__title">Мы - в ТОП-10!</h3>
+                    <p class="news-card__description">Компания "СтройСпецСила" оказалась в ТОП-10 быстрорастущих компаний по версии Интерфакс</p>
+                    <time class="news-card__date">21 июня 2018</time>
+                  </div>
                 </div>
               </article>
             </li>
           </ul>
-        </div>
-      </section>
-
-      <!-- Галерея -->
-      <section class="gallery" id="gallery" aria-labelledby="galleryTitle" aria-describedby="galleryInfo">
-        <div class="gallery__inner">
-          <h2 class="gallery__title" id="galleryTitle">Галерея</h2>
-          <ul class="gallery__list" id="galleryInfo" aria-label="Фотографии">
-          </ul>
-          <a href="#" class="button button--primary button--s--wide gallery__button">Больше фото</a>
         </div>
       </section>
 
@@ -186,27 +189,28 @@
            <div class="form__inner">
              <div class="form__fields-wrapper">
                <div class="input form__block">
-                 <label for="subject-field" class="input__label input__label--required">Тема письма</label>
+                 <label for="subject-field" class="input__label input__label--required">Тема письма:</label>
                  <input type="text" class="input__control" name="subject" id="subject-field" placeholder="Строительство поселка" minlength="5" maxlength="50" required>
                </div>
                <div class="input form__block">
-                 <label for="initials-field" class="input__label input__label--required">ФИО</label>
+                 <label for="initials-field" class="input__label input__label--required">ФИО:</label>
                  <input type="text" class="input__control" name="initials" id="initials-field" placeholder="Иванов Иван Иванович" minlength="5" maxlength="50" required>
                </div>
                <div class="input form__block">
-                 <label for="mail-field" class="input__label input__label--required">E-mail</label>
+                 <label for="mail-field" class="input__label input__label--required">E-mail:</label>
                  <input type="email" class="input__control" name="mail" id="mail-field" placeholder="ivanov@example.com" required>
                </div>
                <div class="input form__block">
-                 <label for="phone-field" class="input__label input__label--required">Телефон</label>
-                 <input type="tel" class="input__control" name="phone" id="phone-field" placeholder="+7XXXXXXXXXX"required>
+                 <label for="phone-field" class="input__label input__label--required">Телефон:</label>
+                 <input type="tel" class="input__control" name="phone" id="phone-field" placeholder="+7XXXXXXXXXX" required>
                </div>
-               <div class="textarea form__block">
-                 <label for="comments-field" class="input__label textarea__label">Текст обращения</label>
+               <div class="textarea form__block form__textarea">
+                 <label for="comments-field" class="input__label textarea__label">Текст обращения:</label>
                  <textarea class="textarea__control" name="comments" id="comments-field" placeholder="Дополнительная информация"></textarea>
                </div>
+               <p class="form__text">Поля, помеченные <span>*</span>, обязательны к заполнению.</p>
+               <button class="button button--primary button--s--wide form__button" type="submit">Отправить</button>
              </div>
-             <button class="button button--primary button--s--wide form__button" type="submit">Отправить</button>
            </div>
           </form>
         </div>
@@ -239,20 +243,13 @@
         <a href="" class="main-footer__logo main-page__footer-logo" aria-label="Логотип King's Lounge">
           <img src="img/svg/logo--tablet.svg" width="120" height="70" alt="Логотип King's Lounge" class="main-footer__logo-svg">
         </a>
-        <ul class="social-list">
+        <ul class="footer__list">
           <li class="social-list__item">
             <a href="#" class="social-link" aria-label="Instagram"><span class="visually-hidden">Instagram</span>
-              <svg aria-label="Instagram" width="36" height="36" class="social-link__svg">
-                <use xlink:href="img/svg/sprite.svg#instagram-icon"/>
-              </svg>
             </a>
           </li>
           <li class="social-list__item">
-            <a href="#" class="social-link" aria-label="VK"><span class="visually-hidden">VK</span>
-              <svg aria-label="VK" width="36" height="36" class="social-link__svg">
-                <use xlink:href="img/svg/sprite.svg#vk-icon"/>
-              </svg>
-            </a>
+            <a href="#" class="social-link" aria-label="VK"></a>
           </li>
           <li class="social-list__item">
             <a href="#" class="social-link" aria-label="Twitter"><span class="visually-hidden">Twitter</span>
@@ -264,6 +261,8 @@
         </ul>
       </div>
     </footer>
+
+    © ООО «Ракета», 2017−2018
 
     <!-- Скролл наверх -->
     <a href="#" class="js-scroll-top main-page__js-scroll-top" aria-label="Scroll top">

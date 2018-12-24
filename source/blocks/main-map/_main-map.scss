@@ -1,11 +1,20 @@
 .main-map {
-  position: absolute;
   width: 100%;
   min-height: 457px;
   max-height: 100vh;
   overflow: hidden;
+  opacity: 0.3;
+  transition: all 0.3s ease-in-out;
 
   @media (min-width: breakpoint(tablet)) {
-    height: 100vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 50vh;
+  }
+
+  &:focus,
+  &:hover {
+    opacity: 1;
   }
 }

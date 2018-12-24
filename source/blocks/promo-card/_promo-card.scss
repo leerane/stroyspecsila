@@ -1,0 +1,55 @@
+.promo-card {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.promo-card__inner {
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.promo-card__image {
+  position: absolute;
+  width: 100%;
+}
+
+.promo-card__info {
+  position: relative;
+  padding: rem(50, 30);
+  margin: 0 auto;
+  z-index: z-index(default);
+
+  @media (min-width: breakpoint(tablet)) {
+    padding: rem(65, 50);
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    padding: rem(80, 50);
+    max-width: breakpoint(desktop);
+  }
+}
+
+.promo-card__title {
+  margin: 0 0 0.5em 0;
+  padding: 0;
+
+  white-space: pre-line;
+
+  @include font-par(font-family(default), font-weight(bold), font-size(h2-m), normal, color($main-c, primary), font-lh(root));
+
+  @include fluid-type(font-size(h2-m), font-size(h2-d));
+}
+
+.promo-card__subtitle {
+  display: block;
+  margin: 0 0 0.1em 0;
+  padding: 0;
+
+  white-space: pre-line;
+
+  @include font-par(font-family(default), font-weight(bold), font-size(h3-m), normal, color($base-c, white), 1.5);
+
+  @include fluid-type(font-size(h3-m), font-size(h3-d));
+}
