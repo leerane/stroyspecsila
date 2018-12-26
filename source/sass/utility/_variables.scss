@@ -2,6 +2,7 @@
 
 // Z-index
 
+$z-index-behind: -1 !default;
 $z-index-default: 1 !default;
 $z-index-dropdown: 5 !default;
 $z-index-header: 10 !default;
@@ -15,6 +16,7 @@ $z-index-modal: 70 !default;
 $z-index-gallery: 1500 !default;
 
 $z-index: (
+  behind: $z-index-behind,
   default: $z-index-default,
   dropdown: $z-index-dropdown,
   header: $z-index-header,

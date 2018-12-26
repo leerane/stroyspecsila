@@ -37,7 +37,10 @@
 .main-page__main-header {
   z-index: z-index(logo);
 
-  @media (min-width: breakpoint(tablet)) {
+  @media (min-width: breakpoint(desktop)) {
     position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }

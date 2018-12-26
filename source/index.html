@@ -50,7 +50,7 @@
           <div class="main-navigation__inner">
             <ul class="main-navigation__list">
               <li class="main-navigation__item">
-                <a class="main-navigation__link main-page__link main-navigation__link--icon">Главная</a>
+                <a class="main-navigation__link main-page__link">Главная</a>
               </li>
               <li class="main-navigation__item">
                 <a href="#advantages" class="main-navigation__link">О компании</a>
@@ -59,10 +59,10 @@
                 <a href="#menu" class="main-navigation__link">Объекты</a>
               </li>
               <li class="main-navigation__item">
-                <a href="#gallery" class="main-navigation__link main-navigation__link--icon">Галерея</a>
+                <a href="#gallery" class="main-navigation__link">Галерея</a>
               </li>
               <li class="main-navigation__item">
-                <a href="#contact" class="main-navigation__link">Обратная связь</a>
+                <a href="#contact" class="main-navigation__link main-navigation__link--current">Обратная связь</a>
               </li>
               <li class="main-navigation__item">
                 <a href="#contact" class="main-navigation__link">Новости</a>
@@ -81,43 +81,45 @@
 
       <!-- Промо -->
       <section class="promo" aria-labelledby="promoTitle" aria-describedby="promoInfo">
-        <div class="promo__inner">
-          <article class="promo-card">
-            <div class="promo-card__inner">
-              <picture>
-                <source type="image/webp" srcset="img/1@1x.webp 1x, img/1@2x.webp 2x">
-                <img src="img/1@1x.jpg" srcset="img/1@2x.jpg 2x" alt="100 тыс. кв. метров введено в эксплуатацию" class="promo-card__image">
-              </picture>
-              <div class="promo-card__info">
-                <h2 class="promo-card__title">100 тыс. кв. метров</h2>
-                <h3 class="promo-card__subtitle">Введено в эксплуатацию</h3>
+        <div class="promo__container swiper-container">
+          <div class="promo__inner swiper-wrapper">
+            <article class="promo-card swiper-slide">
+              <div class="promo-card__inner">
+                <picture>
+                  <source type="image/webp" srcset="img/1@1x.webp 1x, img/1@2x.webp 2x">
+                  <img src="img/1@1x.jpg" srcset="img/1@2x.jpg 2x" alt="100 тыс. кв. метров введено в эксплуатацию" class="promo-card__image">
+                </picture>
+                <div class="promo-card__info">
+                  <h2 class="promo-card__title">100 тыс. кв. метров</h2>
+                  <h3 class="promo-card__subtitle">Введено в эксплуатацию</h3>
+                </div>
               </div>
-            </div>
-          </article>
-          <article class="promo-card visually-hidden">
-            <div class="promo-card__inner">
-              <picture>
-                <source type="image/webp" srcset="img/2@1x.webp 1x, img/2@2x.webp 2x">
-                <img src="img/2@1x.jpg" srcset="img/2@2x.jpg 2x" alt="Rozarossa" class="promo-card__image">
-              </picture>
-              <div class="promo-card__info">
-                <h2 class="promo-card__title">Rozarossa</h2>
-                <h3 class="promo-card__subtitle">Премиальный комплекс апартаментов в Хамовниках</h3>
+            </article>
+            <article class="promo-card swiper-slide">
+              <div class="promo-card__inner">
+                <picture>
+                  <source type="image/webp" srcset="img/2@1x.webp 1x, img/2@2x.webp 2x">
+                  <img src="img/2@1x.jpg" srcset="img/2@2x.jpg 2x" alt="Rozarossa" class="promo-card__image">
+                </picture>
+                <div class="promo-card__info">
+                  <h2 class="promo-card__title">Rozarossa</h2>
+                  <h3 class="promo-card__subtitle">Премиальный комплекс апартаментов в Хамовниках</h3>
+                </div>
               </div>
-            </div>
-          </article>
-          <article class="promo-card visually-hidden">
-            <div class="promo-card__inner">
-              <picture>
-                <source type="image/webp" srcset="img/3@1x.webp 1x, img/3@2x.webp 2x">
-                <img src="img/3@1x.jpg" srcset="img/3@2x.jpg 2x" alt="СтройСпецСила в ТОП-10" class="promo-card__image">
-              </picture>
-              <div class="promo-card__info">
-                <h2 class="promo-card__title">СтройСпецСила - в ТОП-10 самых быстрорастущих компаний</h2>
-                <h3 class="promo-card__subtitle">по версии Интерфакс</h3>
+            </article>
+            <article class="promo-card swiper-slide">
+              <div class="promo-card__inner">
+                <picture>
+                  <source type="image/webp" srcset="img/3@1x.webp 1x, img/3@2x.webp 2x">
+                  <img src="img/3@1x.jpg" srcset="img/3@2x.jpg 2x" alt="СтройСпецСила в ТОП-10" class="promo-card__image">
+                </picture>
+                <div class="promo-card__info">
+                  <h2 class="promo-card__title">СтройСпецСила</h2>
+                  <h3 class="promo-card__subtitle">в ТОП-10 самых быстрорастущих компаний по версии "Интерфакс"</h3>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -127,6 +129,23 @@
           <h2 class="latest-news__title" id="latestNewsTitle">Последние новости</h2>
           <ul class="latest-news__list" id="latestNewsInfo">
             <li class="latest-news__item">
+            <article class="news-card">
+              <div class="news-card__inner">
+                <a href="#" class="news-card__image-wrapper">
+                  <picture>
+                    <source type="image/webp" srcset="img/3@1x.webp 1x, img/3@2x.webp 2x">
+                    <img src="img/3@1x.jpg" srcset="img/3@2x.jpg 2x" alt="СтройСпецСила в ТОП-10" class="news-card__image">
+                  </picture>
+                </a>
+                <div class="news-card__info">
+                  <h3 class="news-card__title"><a href="#" class="news-card__link news-card__link--title">Мы - в ТОП-10!</a></h3>
+                  <p class="news-card__description">Компания "СтройСпецСила" оказалась в ТОП-10 быстрорастущих компаний по версии Интерфакс</p>
+                  <time class="news-card__date">21 июня 2018</time>
+                </div>
+              </div>
+            </article>
+          </li>
+            <li class="latest-news__item">
               <article class="news-card">
                 <div class="news-card__inner">
                   <a href="#" class="news-card__image-wrapper">
@@ -136,7 +155,7 @@
                     </picture>
                   </a>
                   <div class="news-card__info">
-                    <h3 class="news-card__title">Мы - в ТОП-10!</h3>
+                    <h3 class="news-card__title"><a href="#" class="news-card__link news-card__link--title">Мы - в ТОП-10!</a></h3>
                     <p class="news-card__description">Компания "СтройСпецСила" оказалась в ТОП-10 быстрорастущих компаний по версии Интерфакс</p>
                     <time class="news-card__date">21 июня 2018</time>
                   </div>
@@ -153,24 +172,7 @@
                     </picture>
                   </a>
                   <div class="news-card__info">
-                    <h3 class="news-card__title">Мы - в ТОП-10!</h3>
-                    <p class="news-card__description">Компания "СтройСпецСила" оказалась в ТОП-10 быстрорастущих компаний по версии Интерфакс</p>
-                    <time class="news-card__date">21 июня 2018</time>
-                  </div>
-                </div>
-              </article>
-            </li>
-            <li class="latest-news__item">
-              <article class="news-card">
-                <div class="news-card__inner">
-                  <a href="#" class="news-card__image-wrapper">
-                    <picture>
-                      <source type="image/webp" srcset="img/3@1x.webp 1x, img/3@2x.webp 2x">
-                      <img src="img/3@1x.jpg" srcset="img/3@2x.jpg 2x" alt="СтройСпецСила в ТОП-10" class="news-card__image">
-                    </picture>
-                  </a>
-                  <div class="news-card__info">
-                    <h3 class="news-card__title">Мы - в ТОП-10!</h3>
+                    <h3 class="news-card__title"><a href="#" class="news-card__link news-card__link--title">Мы - в ТОП-10!</a></h3>
                     <p class="news-card__description">Компания "СтройСпецСила" оказалась в ТОП-10 быстрорастущих компаний по версии Интерфакс</p>
                     <time class="news-card__date">21 июня 2018</time>
                   </div>
@@ -178,6 +180,15 @@
               </article>
             </li>
           </ul>
+          <button class="button button--primary button--s--wide latest-news__button" type="submit">Больше новостей</button>
+        </div>
+      </section>
+
+      <!-- О компании -->
+      <section class="about-us" id="about-us" aria-labelledby="aboutUsTitle" aria-describedby="aboutUsNewsInfo">
+        <div class="about-us__inner">
+          <h2 class="about-us__title" id="aboutUsTitle">О компании</h2>
+          <button class="button button--primary button--s--wide about-us__button" type="submit">Больше новостей</button>
         </div>
       </section>
 

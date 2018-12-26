@@ -93,7 +93,7 @@ $animation-duration: 0.8s;
   border: none;
   cursor: pointer;
 
-  @media (min-width: breakpoint(tablet)) {
+  @media (min-width: breakpoint(desktop)) {
     display: none;
   }
 
