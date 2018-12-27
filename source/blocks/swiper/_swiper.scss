@@ -256,12 +256,13 @@
   transform: scale(0.33);
 }
 .swiper-pagination-bullet {
-  width: 8px;
-  height: 8px;
+  width: rem(12);
+  height: rem(12);
   display: inline-block;
   border-radius: 100%;
-  background: #000;
+  background: color($base-c, black);
   opacity: 0.2;
+  transition: all 0.3s ease-in-out;
 }
 button.swiper-pagination-bullet {
   border: none;
@@ -278,7 +279,7 @@ button.swiper-pagination-bullet {
 }
 .swiper-pagination-bullet-active {
   opacity: 1;
-  background: #007aff;
+  background: color($main-c, primary);
 }
 .swiper-container-vertical > .swiper-pagination-bullets {
   right: 10px;

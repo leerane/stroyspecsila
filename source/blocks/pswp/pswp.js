@@ -5,7 +5,6 @@
 import PhotoSwipe from "photoswipe";
 import PhotoSwipeUI_Default from "photoswipe/dist/photoswipe-ui-default";
 
-
 var openPhotoSwipe = function () {
   const body = document.body;
   body.cssText = `overflow: hidden`;

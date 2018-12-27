@@ -1,5 +1,5 @@
 /**
- * Модуль промо
+ * Модуль секции "Наши клиенты"
  */
 
 import { Swiper, Navigation, Pagination, Scrollbar } from 'swiper/dist/js/swiper.esm.js';
@@ -11,14 +11,14 @@ Swiper.use([Navigation, Pagination, Scrollbar]);
 const promoSwiper = new Swiper ('.swiper-container', {
   direction: 'horizontal',
   loop: true,
+  autoplay: {
+    delay: 3000,
+  },
   pagination: {
     el: '.swiper-pagination',
   },
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
-  },
-  scrollbar: {
-    el: '.swiper-scrollbar',
   },
 });
