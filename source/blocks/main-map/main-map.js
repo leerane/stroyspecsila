@@ -3,7 +3,7 @@
  */
 
 let yMap;
-const coords = [55.61766987853599, 37.511211690490725];
+const coords = [55.63270756910718, 37.36655599999999];
 ymaps.ready(init);
 
 /**
@@ -13,7 +13,7 @@ function init() {
   // Создание карты.
   yMap = new ymaps.Map('main-map', {
     center: coords,
-    zoom: 17
+    zoom: 16
   }, {
     searchControlProvider: 'yandex#search'
   });

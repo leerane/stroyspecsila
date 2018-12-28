@@ -6,13 +6,6 @@
   opacity: 0.3;
   transition: all 0.3s ease-in-out;
 
-  @media (min-width: breakpoint(tablet)) {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 50vh;
-  }
-
   &:focus,
   &:hover {
     opacity: 1;

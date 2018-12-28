@@ -35,6 +35,5 @@ const fixHeader = (header = '.js-main-header', content = '.main-content', logo =
 
 
 window.addEventListener('scroll', function () {
-  console.log('ХАЙ');
   fixHeader();
 });

@@ -2,23 +2,35 @@
  * Модуль секции "Наши клиенты"
  */
 
-import { Swiper, Navigation, Pagination, Scrollbar } from 'swiper/dist/js/swiper.esm.js';
-
-// Устанавливаем модули
-Swiper.use([Navigation, Pagination, Scrollbar]);
+import Swiper from 'swiper';
 
 // Сам Swiper
-const promoSwiper = new Swiper ('.swiper-container', {
-  direction: 'horizontal',
+const clientsSwiper = new Swiper ('.swiper-container-2', {
   loop: true,
-  autoplay: {
-    delay: 3000,
+  breakpointsInverse: true,
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 0
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 10
+    },
+    1150: {
+      slidesPerView: 3,
+      spaceBetween: 30
+    },
   },
+  spaceBetween: 30,
   pagination: {
     el: '.swiper-pagination',
+    clickable: true,
   },
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
 });
+
+clientsSwiper.init();

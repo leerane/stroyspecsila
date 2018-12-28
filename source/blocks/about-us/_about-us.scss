@@ -20,17 +20,43 @@
 }
 
 .about-us__title {
+  position: relative;
   margin: 0 0 0.7em 0;
   padding: 0;
-
+  text-align: center;
   white-space: pre-line;
 
   @include font-par(font-family(default), font-weight(bold), font-size(h2-m), normal, color($base-c, white), font-lh(root));
 
   @include fluid-type(font-size(h2-m), font-size(h2-d));
 
+  @media (min-width: breakpoint(tablet)) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+  }
+
   @media (min-width: breakpoint(desktop)) {
     margin-bottom: rem(50);
+  }
+}
+
+.about-us__title::after {
+  @media (min-width: breakpoint(tablet)) {
+    content: '';
+    display: block;
+    margin: rem(5) 0 0 rem(40);
+    padding: 0;
+    width: 154.98px;
+    height: 21px;
+    background-image: url("../img/svg/wave-pattern.svg");
+    background-repeat: no-repeat;
+    background-size: 154.98px auto;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin: rem(7) 0 0 rem(45);
   }
 }
 
@@ -68,6 +94,20 @@
     order: 0;
     width: 65%;
   }
+}
+
+.about-us__em-text {
+  padding: 0;
+  margin: 0;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  text-overflow: clip;
+  order: 1;
+  white-space: pre-line;
+
+  @include font-par(font-family(default), font-weight(bold), font-size(base-m), normal, color($main-c, primary), font-lh(root));
+
+  @include fluid-type(font-size(base-m), font-size(base-d));
 }
 
 .about-us__clients {
@@ -122,7 +162,6 @@
   transition: all 0.3s ease-in-out;
   width: 200px;
   height: 200px;
-  z-index: z-index(dropdown);
 
   @media (min-width: breakpoint(tablet)) {
     width: 30%;
@@ -148,7 +187,7 @@
 .about-us__item {
   padding: 0;
   margin: 0;
-  width: 240px;
+  width: 100%;
   height: 240px;
   opacity: 0.3;
   transition: all 0.3s ease-in-out;
@@ -177,7 +216,8 @@
 .about-us__slider-button {
   width: 44px;
   height: 44px;
-  position: relative;
+  position: absolute;
+  top: 50%;
   background: none;
   cursor: pointer;
   overflow: visible;
@@ -195,7 +235,7 @@
 
   &:active {
     outline: none;
-    transform: translateY(5px);
+    transform: translateY(-43%);
     opacity: 0.8;
   }
 }
@@ -207,6 +247,16 @@
   height: 60px;
   display: block;
   opacity: 1;
+}
+
+.about-us__slider-button--left {
+  left: 10%;
+  transform: translate(0, -50%);
+}
+
+.about-us__slider-button--right {
+  right: 10%;
+  transform: translate(0, -50%);
 }
 
 .about-us__slider-button:focus,

@@ -189,7 +189,7 @@
         <div class="about-us__inner">
           <h2 class="about-us__title" id="aboutUsTitle">О компании</h2>
           <div class="about-us__info">
-            <p class="about-us__description">Компания «СтройСпецСила» обладает безупречной репутацией надежного застройщика самых ответственных объектов. В нашем распоряжении мощные технические ресурсы и специалисты высокого класса. Десятки успешно выполенных проектов в строго установленные сроки являются показателем качества нашей работы.
+            <p class="about-us__description">Компания <span class="about-us__em-text">«СтройСпецСила»</span> обладает безупречной репутацией надежного застройщика самых ответственных объектов. В нашем распоряжении мощные технические ресурсы и специалисты высокого класса. Десятки успешно выполенных проектов в строго установленные сроки являются показателем качества нашей работы.
 
               Наша компания выполняет строительные работы в Москве и Московской области с 2010 года. С первого года существования  мы возводим крупные современные строительные объекты. За время работы сформирована солидная техническая база, включающая все виды передовой строительной спецтехники, оборудования, произведенных ведущими мировыми брендами. Это позволяет нам выполнять широкий спектр работ.</p>
             <svg aria-label="Building" width="300" height="300" class="about-us__building-svg building-pattern" viewBox="0 0 186.18 209.53">
@@ -408,7 +408,7 @@
           </div>
           <section class="about-us__clients" aria-labelledby="aboutUsSubTitle" aria-describedby="aboutUsClientsInfo">
             <h2 class="about-us__subtitle" id="aboutUsSubTitle">Наши клиенты</h2>
-            <div class="about-us__container swiper-container">
+            <div class="about-us__container swiper-container-2">
               <ul class="about-us__list swiper-wrapper" id="aboutUsClientsInfo">
                 <li class="about-us__item swiper-slide">
                   <picture>
@@ -447,18 +447,16 @@
                 </li>
               </ul>
               <ul class="swiper-pagination about-us__pagination"></ul>
-              <div class="about-us__buttons ">
-                <button class="about-us__slider-button about-us__slider-button--left swiper-button-prev" title="Previous">
-                  <svg aria-label="Previous" width="60" height="60" class="about-us__icon-svg">
-                    <use xlink:href="img/svg/sprite.svg#button-left-icon"/>
-                  </svg>
-                </button>
-                <button class="about-us__slider-button about-us__slider-button--right swiper-button-next" title="Next">
-                  <svg aria-label="Next" width="60" height="60" class="about-us__icon-svg">
-                    <use xlink:href="img/svg/sprite.svg#button-right-icon"/>
-                  </svg>
-                </button>
-              </div>
+              <button class="about-us__slider-button about-us__slider-button--left swiper-button-prev" title="Previous">
+                <svg aria-label="Previous" width="60" height="60" class="about-us__icon-svg">
+                  <use xlink:href="img/svg/sprite.svg#button-left-icon"/>
+                </svg>
+              </button>
+              <button class="about-us__slider-button about-us__slider-button--right swiper-button-next" title="Next">
+                <svg aria-label="Next" width="60" height="60" class="about-us__icon-svg">
+                  <use xlink:href="img/svg/sprite.svg#button-right-icon"/>
+                </svg>
+              </button>
             </div>
           </section>
           <a href="#" class="button button--primary button--s--wide about-us__button">Подробнее</a>
@@ -507,13 +505,45 @@
             <h2 class="contact__title" id="contactTitle">Контакты</h2>
             <ul class="contact__list">
               <li class="contact__item">
-                <a href="tel:+79585553355" class="contact__link">+7 (495) 733-57-31</a>
+                <h3 class="contact__subtitle">
+                  <svg aria-label="Info" width="21" height="21" class="contact__svg">
+                    <use xlink:href="img/svg/sprite.svg#coords-icon"/>
+                  </svg>Адрес
+                </h3>
+                <ul class="contact__sublist">
+                  <li class="contact__subitem">Новоясеневский проспект, 1Б стр. 4</li>
+                </ul>
               </li>
               <li class="contact__item">
-                <a href="mailto:booking@kingslounge.ru" class="contact__link">info@stroyspecsila.ru</a>
+                <h3 class="contact__subtitle">
+                  <svg aria-label="Phone" width="21" height="21" class="contact__svg">
+                    <use xlink:href="img/svg/sprite.svg#call-icon"/>
+                  </svg>Телефон
+                </h3>
+                <ul class="contact__sublist">
+                  <li class="contact__subitem">
+                    <a href="tel:+79585553355" class="contact__link">+7 (495) 733-57-31</a>
+                  </li>
+                  <li class="contact__subitem">
+                    <a href="tel:+79585553355" class="contact__link">+7 (495) 733-57-27</a>
+                  </li>
+                  <li class="contact__subitem">
+                    <a href="tel:+79585553355" class="contact__link">+7 (495) 733-57-28</a>
+                  </li>
+                </ul>
               </li>
-              <li class="contact__item">Новоясеневский проспект, 1Б стр. 4</li>
-              <li class="contact__item">340 метров от м. Теплый стан</li>
+              <li class="contact__item">
+                <h3 class="contact__subtitle">
+                  <svg aria-label="Mail" width="21" height="21" class="contact__svg">
+                    <use xlink:href="img/svg/sprite.svg#mail-icon"/>
+                  </svg>Почта
+                </h3>
+                <ul class="contact__sublist">
+                  <li class="contact__subitem">
+                    <a href="mailto:booking@kingslounge.ru" class="contact__link">info@stroyspecsila.ru</a>
+                  </li>
+                </ul>
+              </li>
             </ul>
           </div>
         </div>

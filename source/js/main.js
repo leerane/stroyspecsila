@@ -6,6 +6,7 @@
 import './modules/utils';
 import './modules/disable-anchors';
 import './modules/smooth-scroll';
+import './modules/reveal';
 
 // Блочные модули
 import ScrollReveal from 'scrollreveal';
