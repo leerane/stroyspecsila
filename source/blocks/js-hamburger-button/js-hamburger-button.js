@@ -17,7 +17,7 @@ const toggleNavigation = () => {
 
   hamburgerButton.classList.toggle('hamburger-button--close');
   navigation.classList.remove('visually-hidden');
-  navigation.classList.toggle('main-navigation--active')
+  navigation.classList.toggle('main-navigation--active');
 };
 
 hamburgerButton.addEventListener('click', toggleNavigation);

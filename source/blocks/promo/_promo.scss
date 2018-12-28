@@ -1,0 +1,32 @@
+.promo {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: color($main-c, background);
+
+  @media (min-width: breakpoint(desktop)) {
+    height: 100vh;
+    width: 100%;
+  }
+}
+
+.promo__container {
+  position: relative;
+  margin: 0;
+  padding: 0 0 80% 0;
+  height: 0;
+  width: 100%;
+
+  @media (min-width: breakpoint(desktop)) {
+    padding: 0;
+    height: 100%;
+  }
+}
+
+.promo__inner {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}

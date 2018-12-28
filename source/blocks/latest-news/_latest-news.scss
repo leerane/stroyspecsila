@@ -1,0 +1,82 @@
+.latest-news {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background-color: color($main-c, background);
+}
+
+.latest-news__inner {
+  padding: rem(35, 30);
+  margin: 0 auto;
+
+  @media (min-width: breakpoint(tablet)) {
+    padding: rem(50, 50);
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    padding: rem(70, 50);
+    max-width: 1150px;
+  }
+}
+
+.latest-news__title {
+  margin: 0 0 0.7em 0;
+  padding: 0;
+  text-align: center;
+  white-space: pre-line;
+
+  @include font-par(font-family(default), font-weight(bold), font-size(h2-m), normal, color($base-c, white), font-lh(root));
+
+  @include fluid-type(font-size(h2-m), font-size(h2-d));
+
+  @media (min-width: breakpoint(tablet)) {
+    text-align: right;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-bottom: rem(50);
+  }
+}
+
+.latest-news__list {
+  @include clear-list();
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  align-items: center;
+
+  @media (min-width: breakpoint(tablet)) {
+    align-content: stretch;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: auto;
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-bottom: rem(5);
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin-bottom: rem(10);
+  }
+}
+
+.latest-news__item {
+  padding: 0;
+  margin: 0 0 rem(30);
+  width: 100%;
+  transition: 0.3s ease-in-out;
+
+  @media (min-width: breakpoint(tablet)) {
+    padding: 0 rem(15);
+    width: 50%;
+    margin: 0 0 rem(40);
+  }
+}
+
+.latest-news__button {
+  margin: 0 auto;
+  max-width: 320px;
+}

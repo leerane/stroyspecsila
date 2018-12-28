@@ -6,7 +6,7 @@
 const hamburgerButton = document.querySelector('.js-hamburger-button');
 const navigation = document.querySelector('.js-dropdown-navigation');
 const body = document.body;
-const BREAKPOINT = '768';
+const BREAKPOINT = '1150';
 const mediaQuery = window.matchMedia(`(min-width: ${BREAKPOINT}px)`);
 
 /**
@@ -14,8 +14,8 @@ const mediaQuery = window.matchMedia(`(min-width: ${BREAKPOINT}px)`);
  */
 const closeNavigation = () => {
   hamburgerButton.classList.remove('hamburger-button--close');
-  navigation.classList.remove('visually-hidden');
   navigation.classList.remove('main-navigation--active');
+  navigation.classList.add('visually-hidden');
   body.style.overflow = 'visible';
   body.style.pointerEvents = 'auto';
 };

@@ -7,7 +7,7 @@
 .input__label {
   position: relative;
   display: block;
-  margin: 0;
+  margin: 0 0 rem(10) 0;
   padding: 0;
   transition: all 0.3s ease-in-out;
 
@@ -37,33 +37,44 @@
 }
 
 .input__control {
+  position: relative;
   width: 100%;
-  padding: rem(10);
+  padding: rem(10, 15, 10, 15);
   margin: 0;
-  background-color: transparent;
+  background-color: color($main-c, pattern);
   border: 0;
   transition: all 0.3s ease-in-out;
   outline: none;
+  border-radius: rem(10);
+  box-shadow: none;
 
-  @include font-par(font-family(default), font-weight(normal), font-size(base-m), normal, color($base-c, white), font-lh(root));
+  @include font-par(font-family(default), font-weight(normal), font-size(root), normal, color($base-c, white), font-lh(root));
 
-  @include fluid-type(font-size(base-m), font-size(base-d));
-
-  @include box-shadow(0, -2px, 0, 0, color($main-c, secondary), true);
+  @include fluid-type(font-size(root), font-size(root));
 
   @include placeholder() {
     color: rgba(color($main-c, secondary), 0.3);
     transition: all 0.3s ease-in-out;
   }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background-color: color($main-c, primary);
+  }
 }
 
 .input__control--invalid {
-  @include box-shadow(0, -2px, 0, 0, color($main-c, danger), true);
+  background-color: rgba(color($main-c, danger), 0.08);
 }
 
 .input__control:focus,
 .input__control:hover {
-  @include box-shadow(0, -2px, 0, 0, color($main-c, primary), true);
+  @include box-shadow(0, 0, 0, 2px, color($main-c, primary), true);
 }
 
 .input__control:focus {

@@ -1,0 +1,93 @@
+.promo-card {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.promo-card__inner {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+
+.promo-card__image {
+  display: block;
+  height: 100%;
+  width: 100%;
+  max-width: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  opacity: 0.1;
+  transition: all 0.4s ease-in-out;
+
+
+  @media (min-width: breakpoint(desktop)) {
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: auto;
+    height: auto;
+  }
+}
+
+.promo-card__image::before {
+  @media (min-width: breakpoint(desktop)) {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    z-index: z-index(default);
+    width: 50px;
+    height: 100%;
+    box-shadow: inset 20px 0 50px 0 red;
+  }
+}
+
+.promo-card__info {
+  position: relative;
+  padding: rem(50, 30);
+  margin: 0;
+  z-index: z-index(default);
+  align-self: center;
+
+  @media (min-width: breakpoint(tablet)) {
+    margin: 0 0 0 rem(50);
+    padding: rem(65, 50);
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin: 0 0 0 rem(300);
+    padding: rem(80, 50);
+    max-width: breakpoint(desktop);
+  }
+}
+
+.promo-card__title {
+  margin: 0 0 0.5em 0;
+  padding: 0;
+
+  white-space: pre-line;
+
+  @include font-par(font-family(default), font-weight(bold), font-size(h1-m), normal, color($main-c, primary), font-lh(root));
+
+  @include fluid-type(font-size(h2-m), font-size(h1-d));
+}
+
+.promo-card__subtitle {
+  display: block;
+  margin: 0 0 0.1em 0;
+  padding: 0;
+
+  white-space: pre-line;
+
+  @include font-par(font-family(default), font-weight(bold), font-size(h3-m), normal, color($base-c, white), 1.5);
+
+  @include fluid-type(font-size(h3-m), font-size(h3-d));
+}

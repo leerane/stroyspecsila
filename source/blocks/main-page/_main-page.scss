@@ -33,3 +33,14 @@
   right: 15px;
   bottom: 15px;
 }
+
+.main-page__main-header {
+  z-index: z-index(logo);
+
+  @media (min-width: breakpoint(desktop)) {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

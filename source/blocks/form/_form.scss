@@ -9,18 +9,18 @@
 }
 
 .form__fields-wrapper {
-  margin: 0 0 rem(30) 0;
+  margin: 0;
   padding: 0;
   display: block;
 
   @media (min-width: breakpoint(tablet)) {
     width: 50%;
-    margin: 0 auto rem(45) auto;
+    margin: 0 auto;
   }
 
   @media (min-width: breakpoint(desktop)) {
     min-width: 500px;
-    margin: 0 auto rem(50) auto;
+    margin: 0;
   }
 }
 
@@ -53,6 +53,10 @@
     max-width: 320px;
     margin: 0 auto;
   }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin: 0 auto;
+  }
 }
 
 .form__result-text {
@@ -65,4 +69,38 @@
   @include font-par(font-family(default), font-weight(bold), font-size(h2-m), normal, color($main-c, primary), font-lh(root));
 
   @include fluid-type(font-size(h3-m), font-size(h3-d));
+}
+
+.form__textarea {
+  margin: 0 0 rem(10) 0;
+
+  @media (min-width: breakpoint(tablet)) {
+    margin: 0 0 rem(15) 0;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin: 0 0 rem(20) 0;
+  }
+}
+
+.form__text {
+  padding: 0;
+  margin: 0 0 rem(30);
+  transition: all 0.3s ease-in-out;
+
+  @include font-par(font-family(default), font-weight(normal), font-size(extra-small), normal, color($base-c, white), font-lh(root));
+
+  @include fluid-type(font-size(extra-small), font-size(extra-small));
+
+  @media (min-width: breakpoint(tablet)) {
+    margin: 0 0 rem(45) 0;
+  }
+
+  @media (min-width: breakpoint(desktop)) {
+    margin: 0 0 rem(50) 0;
+  }
+
+  span {
+    color: color($main-c, danger);
+  }
 }

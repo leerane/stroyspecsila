@@ -61,7 +61,8 @@ const sprite = () => {
       run: ($) => {
         const excludedElements = [
           '#pswp-arrow-left-icon',
-          '#pswp-arrow-right-icon'
+          '#pswp-arrow-right-icon',
+          '#building-pattern'
         ];
         const ElementsData = {
           G: excludedElements.map((el) => el + ' g'),
