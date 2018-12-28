@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.57 49.92">
+  <title>scroll-icon</title>
+  <g id="arrow">
+    <g id="arrow-2" data-name="arrow">
+      <path d="M17.74,45.7a.68.68,0,0,0-1,0,.67.67,0,0,0,0,.95l7.74,7.66a.68.68,0,0,0,1,0l7.74-7.66a.67.67,0,0,0,0-.95.68.68,0,0,0-1,0l-7.26,7Z" transform="translate(-14.21 -4.58)" style="fill: #fff"/>
+    </g>
+  </g>
+  <g id="mouse">
+    <g id="mouse-2" data-name="mouse">
+      <path d="M25,4.58A10.8,10.8,0,0,0,14.21,15.37v15.1a10.79,10.79,0,0,0,21.57,0V15.37A10.8,10.8,0,0,0,25,4.58Zm8.59,25.88a8.59,8.59,0,1,1-17.17,0V15.37a8.59,8.59,0,0,1,17.17,0Z" transform="translate(-14.21 -4.58)" style="fill: #fff"/>
+      <path d="M25,14.38a1.1,1.1,0,0,0-1.1,1.1v5.06a1.1,1.1,0,0,0,2.2,0V15.48A1.1,1.1,0,0,0,25,14.38Z" transform="translate(-14.21 -4.58)" style="fill: #fff"/>
+    </g>
+  </g>
+</svg>
